@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LAB GUIDE – includes</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://opsgilitylabs.blob.core.windows.net/lablayout/labstyles.css"></link>
+</head>
+<body>
+<style>
+figcaption{
+    display: none !important;
+}
+</style>
+<h2 id="exercise-3-deploy-a-bot-with-visual-studio-code">Exercise 3: Deploy a bot with Visual Studio Code</h2>
+<p>When you created an Azure Web App Bot in Exercise 2, an Azure Web App was deployed to host it. But the bot does require some code, and it still needs to be deployed to the Azure Web app. Fortunately, the code was generated for you by the Azure Bot Service. In this exercise, you will use Visual Studio Code to place the code in a local Git repository and publish the bot to Azure by pushing changes from the local repository to a remote repository connected to the Azure Web App that hosts the bot — a process known as continuous integration.</p>
+<ol type="1">
+<li><p>Go to and install the latest LTS version of Node.js</p>
+<pre class="html"><code>https://nodejs.org/</code></pre></li>
+<li><p>Create a folder named “Factbot” in the location of your choice on your hard disk to hold the bot’s source code.</p></li>
+<li><p>Return to the Azure Portal and open the “factbot-rg” resource group. Then click the Web App Bot you created in Exercise 1.</p>
+<figure>
+<img src="Images/19-11-06-botresourcegrouphighlight.png" alt="Opening the Web App Bot" /><figcaption>Opening the Web App Bot</figcaption>
+</figure></li>
+<li><p>Click <strong>Build</strong> in the menu on the left, and then click <strong>Download bot source code</strong> to prepare a zip file containing the bot’s source code. Once the zip file is prepared, click the <strong>Download zip file</strong> button to download it. When the download is complete, copy the contents of the zip file to the “Factbot” folder that you created in Step 4.</p>
+<figure>
+<img src="Images/19-11-06-buildbot.png" alt="Downloading the source code" /><figcaption>Downloading the source code</figcaption>
+</figure></li>
+<li><p>Still on the “Build” blade, click <strong>Publish Updates Automatically to Azure with Continuous Deployment</strong>. Then select <strong>Local Git Repository</strong> as the deployment source and click <strong>Continue</strong>. From there select <strong>App Service Build Service</strong> and click <strong>Continue</strong> and then <strong>Finish</strong>.</p></li>
+<li><p>Copy the <strong>Git Clone Url</strong> value and paste it into notepad.</p></li>
+<li><p>Click <strong>FTP/Credentials</strong>, and then go to <strong>App Credentials</strong>.</p></li>
+<li><p>Copy the user name and password to notepad. These will be used for connecting to the Git repository for your bot.</p></li>
+<li><p>Launch <strong>git bash</strong> on your lab VM and execute the following commands to partially configure Git to use the credentials copied.</p>
+<pre class="bash"><code>git config --global user.email [paste in Git user name]
+git config --global user.name [paste in Git user name]</code></pre></li>
+<li><p>Start Visual Studio Code and use the <strong>File</strong> &gt; <strong>Open Folder…</strong> command to open the “Factbot” folder that you copied the bots source code earlier.</p></li>
+<li><p>Click the <strong>Source Control</strong> button in the activity bar on the left side of Visual Studio Code and then click the <strong>+</strong> button. Choose the Factbot directory.</p></li>
+<li><p>Type “First commit.” into the message box, and then click the check mark to commit your changes. Confirm when prompted.</p>
+<figure>
+<img src="Images/vs-first-git-commit.png" alt="Committing changes to the local repository" /><figcaption>Committing changes to the local repository</figcaption>
+</figure></li>
+<li><p>Select <strong>Terminal</strong> from Visual Studio Code’s <strong>View</strong> menu to open an integrated terminal. Then execute the following command in the integrated terminal, replacing [GIT-USER-NAME] and [GET-CLONE-URL] with the values copied to notepad earlier and <strong>https</strong> removed from the git clone url.</p>
+<pre class="bash"><code>git remote add qna-factbot https://[GIT-USER-NAME]@[GIT-CLONE-URL]</code></pre></li>
+<li><p>Click the ellipsis (the three dots) at the top of the SOURCE CONTROL panel and select <strong>Publish Branch</strong> from the menu to push the bot code from the local repository to Azure. If prompted for credentials, enter the user name and password you specified in Step 9 of this exercise.</p></li>
+</ol>
+<p>Your bot has been published to Azure. But before you test it there, let’s run it locally and learn how to debug it in Visual Studio Code.</p>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LAB GUIDE – includes</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://opsgilitylabs.blob.core.windows.net/lablayout/labstyles.css"></link>
+</head>
+<body>
+<style>
+figcaption{
+    display: none !important;
+}
+</style>
+<h2 id="exercise-4-debug-the-bot-locally">Exercise 4: Debug the bot locally</h2>
+<p>As with any application code that you write, changes to bot code need to be tested and debugged locally before being deployed to production. To help debug bots, Microsoft offers the Bot Framework Emulator. In this exercise, you will learn how to use Visual Studio Code and the emulator to debug your bots.</p>
+<ol type="1">
+<li><p>Install the Microsoft Bot Framework Emulator by opening your Bot in the Azure portal, clicking <strong>Build</strong> and then click <strong>Get Emulator</strong>. In the resulting GitHub repository, looking for the latest version of the windows-setup.exe. After the install is complete leave the app running.</p></li>
+<li><p>Click the <strong>Debug</strong> button in the activity bar, and then click the green arrow to start a debugging session. Confirm that “test bot endpoint at http://localhost:3978/api/messages” appears in the debug console.</p>
+<figure>
+<img src="Images/vs-launch-debugger.png" alt="Launching the debugger" /><figcaption>Launching the debugger</figcaption>
+</figure>
+<p><em>Launching the debugger</em></p></li>
+<li><p>Navigate to your bot in the Azure Portal and click on <strong>Configuration</strong>. Copy the <strong>MicrosoftAppId</strong> and <strong>MicrosoftAppPassword</strong> settings to notepad for the next step. <img src="Images/19-11-06-Configuration.png" alt="Configuration Settings" /></p></li>
+<li><p>Your bot code is now running locally. Launch the Bot Framework Emulator and click <strong>Create a new bot configuration</strong>. Enter the bot name and the bot URL <strong>http://localhost:3879/api/messages</strong> and the <strong>MicrosoftAppId</strong> and <strong>MicrosoftAppPassword</strong> from the previous step. Then click <strong>Save and connect</strong> and save the configuration file in the location of your choice.</p>
+<blockquote>
+<p>In the future, you can reconnect to the bot simply by clicking the bot name under “My Bots.”</p>
+</blockquote>
+<figure>
+<img src="Images/new-bot-configuration.png" alt="Connecting to the bot" /><figcaption>Connecting to the bot</figcaption>
+</figure>
+<p><em>Connecting to the bot</em></p></li>
+<li><p>Type “hi” into the box at the bottom of the emulator and press <strong>Enter</strong>. Next type in “I am a c#” developer. Once the bot has responded, then ask the bot “Why are you not singing me a lullaby?”.</p>
+<figure>
+<img src="Images/continue-debugging.png" alt="Continuing in the debugger" /><figcaption>Continuing in the debugger</figcaption>
+</figure>
+<p><em>Continuing in the debugger</em></p></li>
+<li><p>When you’re done, click the <strong>Stop</strong> button in the debugging toolbar to end the debugging session.</p></li>
+</ol>
+<p>At this point, you have a fully functioning bot and know how to debug it by running it locally in the Microsoft Bot Emulator. The next step is to make the bot more intelligent by connecting it to the knowledge base you published in <a href="#Exercise1">Exercise 1</a>.</p>
+</body>
+</html>

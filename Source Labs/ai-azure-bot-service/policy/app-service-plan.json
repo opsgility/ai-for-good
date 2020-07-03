@@ -1,0 +1,19 @@
+{
+  "if": {
+    "allOf": [
+      {
+        "field": "type",
+        "equals": "Microsoft.Web/serverFarms"
+      },
+      {
+        "not": {
+          "field": "Microsoft.Web/serverFarms/sku.name",
+          "in": [ "F0", "S1" ]
+        }
+      }
+    ]
+  },
+  "then": {
+    "effect": "deny"
+  }
+}
