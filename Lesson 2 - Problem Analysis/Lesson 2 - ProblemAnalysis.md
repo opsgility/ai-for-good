@@ -45,9 +45,12 @@ Relational databases store data in tables made up of rows and columns. Azure sup
 
 #### NoSQL Data Stores
 
-NoSQL data stores are designed to store any data that is not structured. Data is commonly stored in a document, these documents are generally stored in a common format such as JSON. 
+NoSQL data stores are designed to store any data that is not structured. NoSQL data can be either unstructured data such as binary data like images, videos or Word documents or semi-structured such as JSON. The difference between these two is that semi-structured data is self-describing, meaning that the schema is part of the file format. 
 
-In Azure, the most common NoSQL database is Azure CosmosDB. CosmosDB is a multi-model database meaning that it can be configured to support 
+Semi-structured data is commonly stored in a document, these documents are generally stored in a common format such as JSON. JSON file formatting allows the developer to define the schema of the data from within the application as opposed to having the database enforce the schema. It is important to point out that semi-structured data is not schema-less, you have merely shifted the responsibility for maintaining and enforcing schema compliance to the application.
+
+In Azure, the most common NoSQL database is Azure CosmosDB. CosmosDB is a multi-model database meaning that it can be configured to support different types of NoSQL data such as document store, graph database, Cassandra or Mongo DB.
+
 
 ### Data Ingestion ###
 
