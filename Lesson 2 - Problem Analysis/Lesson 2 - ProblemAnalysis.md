@@ -8,7 +8,7 @@ You are the leader of a group of climate scientists who are concerned about the 
 
 ### Learning Objectives
 
-In this lab you will learn to:
+Over the next few lessons you will learn to:
 
 - Configure real-time stream ingestion using Azure IoT Hub
 - Analyze real-time streaming data using Azure Stream Analytics
@@ -16,16 +16,65 @@ In this lab you will learn to:
 - Visualize output in real-time using Azure SQL Database and Power BI
 
 
-## Exercise 2: Ingest Streaming Data with IoT Hub ##
+## Ingesting Streaming Data with IoT Hub ##
 
-In this exercise, you will create a storage account and an IoT hub and write a [Node.js](https://nodejs.org/) app that connects them to a simulated camera array. Then you will test one of the virtual cameras by having it upload a photograph to blob storage and transmit an event containing the blob URL and other information to the IoT hub.
+In this lesson, you will create a storage account and an IoT hub and write a [Node.js](https://nodejs.org/) app that connects them to a simulated camera array. Then you will test one of the virtual cameras by having it upload a photograph to blob storage and transmit an event containing the blob URL and other information to the IoT hub.
 
 ### Objectives ###
 
-In this hands-on lab, you will learn how to:
+In this lesson, you will learn how to:
 
 - Create an Azure storage account
 - Create an Azure IoT hub
 - Make authenticated calls to an Azure IoT hub
 - Upload images to Azure blob storage from an app or device
 
+### Data Storage in Azure ###
+
+#### Blob Storage
+
+Blob storage is a cloud based object store used for raw data storage.
+
+#### Data Lake Storage
+
+Data Lake Store is a hierarchical file system optimized for big data analytics workloads. 
+
+#### Relational Databases
+
+Relational databases store data in tables made up of rows and columns. Azure supports various types of relational databases such as Azure SQL Database and MySQL. Data stored in a relational database is considered structured data. Structured data is data that has a fixed schema. When working with structured data the developer must know the schema.
+
+#### NoSQL Data Stores
+
+NoSQL data stores are designed to store any data that is not structured. Data is commonly stored in a document, these documents are generally stored in a common format such as JSON. 
+
+In Azure, the most common NoSQL database is Azure CosmosDB. CosmosDB is a multi-model database meaning that it can be configured to support 
+
+### Data Ingestion ###
+
+#### Batch Ingestion 
+
+Storage Explorer
+
+AzCopy
+
+PowerShell and Azure CLI
+
+Data Factory
+
+#### Real-time Ingestion 
+
+### Data Processing ###
+
+#### Batch Processing 
+
+Databases 
+
+Synapse Analytics
+
+Databricks
+
+#### Real-time Processing
+
+Stream Analytics
+
+Databricks
