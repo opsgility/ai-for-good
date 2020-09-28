@@ -13,18 +13,20 @@ In this exercise, you will create a Custom Vision Service model and train it to 
 In this exercise, you will learn how to:
 
 - Use the Custom Vision Service to train an image-classification model
+
 - Test a Custom Vision Service model
+
 - Call the model from an app or service
 
 ### Time Estimate
 
-- 30 minutes
+- 40 minutes
 
-## Task 1: Build a Custom Vision Service model ##
+## Task 1: Build a Custom Vision Service model
 
 In this task, you will create a new Custom Vision Service project. Then you will upload images of polar bears, arctic foxes, and walruses and tag the images so the Custom Vision Service can learn to differentiate between them.
 
-1. From your LABVM, open the [Custom Vision Service portal](https://www.customvision.ai/) in your browser. Then click **Sign In** and sign in with the credentials in the cloud icon if necessary. 
+1. Open the **Custom Vision Service portal** in a new browser tab by navigating to the below URL. Then click **Sign In**. Agree to the terms of service and sign in with the credentials in the cloud icon if prompted. 
 
 	```
 	https://www.customvision.ai
@@ -32,17 +34,29 @@ In this task, you will create a new Custom Vision Service project. Then you will
 
     ![](images/portal-sign-in.png)
 
-2. Click **New Project** to display the "Create new project" dialog. Enter a project name and description then click **create new** above the Resource dropdown.
+2. Click **New Project** then in the the dialog that appears, enter **ProjectPolarBear** for the **Project name** and **Polar bear tracking** for the description. Click **create new** above the **Resource** dropdown.
 
 	![](images/2019-10-20-15-03-47.png)
 
-3. On the Create New Resource window, enter a name for your resource, choose your subscription, choose the **streaminglab-rg** resource group, **CustomVision.Training** for Kind, **South Central US** for the location and **F0** for the pricing tier then click **Create resource**.
+3. On the **Create New Resource** dialog, enter the following information then click **Create resource**. 
+
+	- Name: **polarbearxxxx (When xxxx is a random number)**
+
+	- Subscription: **The available lab subscription**
+
+	- Resource group: **streaminglab-rg**
+
+	- Kind: **CustomVision.Training**
+
+	- Location: **South Central US**
+
+	- Pricing Tier: **F0**
 
 	![](images/2019-10-20-15-08-58.png)
 
-	Note: You may see an error that says 'One of your Azure accounts seems to have issues'. If this occurs, click Create Project again. You will receive a second error but the resource will show in the Azure portal as well as the Resource drop down in the 'Create new project' menu that appears.
+	>**Note:** You may see an error that says **One of your Azure accounts seems to have issues**. If this occurs, click Create Project again. You will receive a second error but the resource will show in the Azure portal as well as the Resource drop down in the **Create new project** menu that appears. You may have to refresh the page to return to the **Create new project** menu and enter the Name and Description again. 
 
-4. In the resource drop down, choose the resource you just created, set the Project Type to **Classification**, set the Classification type to **Multiclass** and ensure that **General** is selected as the domain, and click **Create project**. 
+4. In the resource drop down, choose the resource you just created, set the Project Type to **Classification**, set the Classification type to **Multiclass** and ensure that **General** is selected as the Domain. Click **Create project**. 
 
 	> A domain optimizes a model for specific types of images. For example, if your goal is to classify food images by the types of food they contain or the ethnicity of the dishes, then it might be helpful to select the Food domain. For scenarios that don't match any of the offered domains, or if you are unsure of which domain to choose, select the General domain.
 
@@ -52,31 +66,29 @@ In this task, you will create a new Custom Vision Service project. Then you will
 
 	![Adding images to the project](Images/add-images.png)
  
-6. Browse to the **C:\\OpsgilityTraining\\TrainingImages\\Arctic Fox** directory and select all of the files. Click **Open** for the selection, enter **Arctic Fox** as the tag for the images and then click the **Upload 130 files** button. Wait for the upload to complete, and then click **Done**.
+6. Browse to the **C:\\SkillMeUp\\TrainingImages\\Arctic Fox** directory and select all of the files then click **Open**. Enter **Arctic Fox** as the tag for the images then click **Upload 130 files**. Wait for the upload to complete then click **Done**.
 
 	![Uploading arctic-fox images](Images/upload-files-1.png)
  
-7. Click **Add images** at the top of the page and repeat the previous step to upload all of the images in the **C:\\OpsgilityTraining\\TrainingImages\\Polar Bear** directory to the Custom Vision Service and tag them with the term **Polar bear** Wait for the upload to complete, and then click **Done**.
+7. Click **Add images** towards the top left of the page and repeat the previous step to upload all of the images in the **C:\\SkillMeUp\\TrainingImages\\Polar Bear** directory to the Custom Vision Service and tag them with the term **Polar bear** Wait for the upload to complete then click **Done**.
 
 	![Uploading polar-bear images](Images/upload-files-2.png)
 
-8. Repeat the previous step to upload all of the images in the **C:\\OpsgilityTraining\\TrainingImages\\Walrus** directory to the Custom Vision Service and tag them with the term **Walrus**. Wait for the upload to complete, and then click **Done**.
+8. Repeat the previous step to upload all of the images in the **C:\\SkillMeUp\\TrainingImages\\Walrus** directory to the Custom Vision Service and tag them with the term **Walrus**. Wait for the upload to complete then click **Done**.
 
 	![Uploading walrus images](Images/upload-files-3.png)
 
 With the images tagged and uploaded, the next step is to train the model so it can distinguish between Arctic foxes, polar bears, and walruses, as well as determine whether an image contains one of these animals.
 
-## Task 2: Train and test the model ##
+## Task 2: Train and test the model
 
 In this task, you will train the model using the images that you tagged and uploaded in the previous task. Then you will test the model to determine how adept it is at identifying Arctic wildlife from photos. Training can be accomplished with a simple button click in the portal, or by calling the [TrainProject](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095bed) method in the [Custom Vision Training API](https://southcentralus.dev.cognitive.microsoft.com/docs/services/d9a10a4a5f8549599f1ecafc435119fa/operations/58d5835bc8cb231380095be3). Once trained, a model can be refined by uploading additional tagged images and retraining it.
 
-1. Click the **Train** button at the top of the page to train the model. Each time you train the model, a new iteration is created. The Custom Vision Service maintains several iterations, allowing you to compare your progress over time.
+1. Click the **Train** button towards the top right of the page to train the model. Each time you train the model, a new iteration is created. The Custom Vision Service maintains several iterations, allowing you to compare your progress over time. Choose **Quick Training** then click **Train**.
 
 	![Training the model](Images/train-model.png)
 
-2. Choose **Quick Training** and then click **Train**.
-
-3. Wait for the training process to complete. (It should only take a few seconds.) Then review the training statistics presented to you for iteration 1.
+2. Wait for the training process to complete. (It should only take a few minutes.) Then review the training statistics presented to you for iteration 1.
 
 	![](images/2019-10-20-15-53-25.png)
 
@@ -84,49 +96,63 @@ In this task, you will train the model using the images that you tagged and uplo
 
 	AP, short for Average Precision, is a third measurement of the model's accuracy. Whereas precision measures the false-positive rate and recall measures the false-negative rate, AP is a mean of false-positive rates computed across a range of thresholds. 
 
-4. Now let's test the model using the portal's Quick Test feature, which allows you to submit images to the model and see how it classifies them using the knowledge gained during training.
-
-	Click the **Quick Test** button at the top of the page. Then click **Browse local files**, browse to the **C:\\OpsgilityTraining\\TestingImages\\Polar bear** directory and select any one of the test images in that directory.
+4. Now let's test the model using the portal's Quick Test feature, which allows you to submit images to the model and see how it classifies them using the knowledge gained during training. Click the **Quick Test** button towards the top of the page. Click **Browse local files**, browse to the **C:\\SkillMeUp\\TestingImages\\Polar bear** directory and select any one of the test images in that directory.
 
 5. Examine the results of the test in the "Quick Test" dialog. What is the probability that the image contains a polar bear? What is the probability that it contains an Arctic fox or a walrus?
 
 	![Testing the model with a polar-bear image](Images/quick-test-1.png)
 
-6. Repeat this test with one of the images in the **C:\\OpsgilityTraining\\TestingImages\\Arctic Fox** directory. How well is the model able to differentiate between Arctic foxes and polar bears?
+6. Repeat this test with one of the images in the **C:\\SkillMeUp\\TestingImages\\Arctic Fox** directory. How well is the model able to differentiate between Arctic foxes and polar bears?
 
 	![Testing the model with an Arctic-fox image](Images/quick-test-2.png)
 
 7. The **TestingImages** directory contains subdirectories with a total of 30 different images for testing. Perform additional quick tests using these images until you are satisfied that the model is reasonably adept at predicting whether an image contains a polar bear.
 
-8. Now we need to publish our model so that we can leverage the model in our application. Before we can do that we will need to create a **CustomVision.Prediction** resource. We will do this through the Custom Vision portal. Navigate back to the root of the Custom Vision portal at https://www.customvision.ai and choose **New Project**.
+8. Now we need to publish our model so that we can leverage the model in our application. Before we can do that we will need to create a **CustomVision.Prediction** resource. We will do this through the Custom Vision portal. Navigate back to the root of the Custom Vision portal at the below url and click **New Project**.
+
+	```
+	https://www.customvision.ai
+	```
 
 9. Click **create new** above the Resource dropdown.
 
 	![](images/2019-10-20-17-19-19.png)
 
-10. In the Create New Resource dialogue, enter a name for your prediction resource, choose your subscription, choose the **streaminglab-rg** resource group, choose **CustomVision.Prediction** for the Kind, choose **South Central US** for the location,  choose **F0** for the pricing tier then click **Create resource**. 
+10. In the Create New Resource dialogue, enter the following information then click **Create resource**. 
+
+	- Name: **polarbeardetector**
+
+	- Subscription: **The available lab subscription**
+
+	- Resource group: **streaminglab-rg**
+
+	- Kind: **CustomVision.Prediction**
+
+	- Location: **South Central US**
+
+	- Pricing tier: **F0**
 
 	![](images/2019-10-20-17-20-50.png)
 
-11. Close out of the Create new project dialogue by clicking **Cancel**. We are simply using the new project wizard to create a new resource for us, we do not need another project.
+11. Close the Create new project dialogue by clicking **Cancel**. We are simply using the new project wizard to create a new resource for us, we do not need another project.
 
-12. Return to the "Performance" tab in your project and click **Publish** to deploy your model. Name your model and choose the prediction resource you just created and click **Publish**.
+12. Click the **ProjectPolarBear** project then click the **Publish** tab to deploy your model. Name your model **polarbeardetector** and choose the prediction resource you just created and click **Publish**.
 
 	![](images/2019-10-20-17-11-13.png)
 
 	![](images/2019-10-20-17-12-33.png)
 
-13. Click the **Prediction URL** button at the top of your project page. The ensuing dialog lists two URLs: one for uploading images via URL, and another for uploading images as byte streams. Copy the former to the clipboard, and then paste it to Notepad so you can retrieve it later. Do the same for the ```Prediction-Key``` value underneath the URL. This value must be passed in each call to the prediction URL. 
+13. Click the **Prediction URL** button at the top of your project page. The ensuing dialog lists two URLs: one for uploading images via URL, and another for uploading images as byte streams. Copy the first Prediction URL then paste it to Notepad so you can retrieve it later. Do the same for the ```Prediction-Key``` value underneath the URL. This value must be passed in each call to the prediction URL. 
 
 	![Copying the Prediction API URL](Images/copy-prediction-url.png)
 
 You now have a machine-learning model that can discern whether an image contains a polar bear, as well as a URL and API key for invoking the model. The next step is create a database for storing the results of those calls.
 
-## Task 3: Create an Azure SQL Database ##
+## Task 3: Create an Azure SQL Database
 
 In this task, you will use the Azure CLI to create an Azure SQL Database that resides in the cloud. This database will collect output from the Azure Function you connected to Stream Analytics in the previous exercise. This will be your real-time view storage location that you will connect to via Power BI to map where Polar Bears have been spotted.
 
-1. From your LABVM, open a Command Prompt and use the following command to create a database server in the "streaminglab-rg" resource group. Replace SERVER_NAME with the name you wish to assign the database server, this name must be unique. You may want to make note of it in Notepad. 
+1. Return to the Azure Cloud Shell (You will likely need to re-connect and sign in again), and use the following command to create a database server in the "streaminglab-rg" resource group. Replace SERVER_NAME with the name you wish to assign the database server, this name must be unique. Make note of it in Notepad. 
 
 	```
 	az sql server create --name SERVER_NAME --resource-group streaminglab-rg --location northcentralus --admin-user demouser --admin-password Demo@pass123
@@ -138,11 +164,11 @@ In this task, you will use the Azure CLI to create an Azure SQL Database that re
 	az sql db create --resource-group streaminglab-rg --server SERVER_NAME --name PolarBearDB --service-objective S1
 	```
 
-3. Go to the database server in the [Azure Portal](https://portal.azure.com) and click **Firewalls and Virtual Networks** in the menu on the left. Turn on **Allow access to Azure services** and click **Save** at the top of the blade to allow other Azure services to connect to the server.
+3. Return to the Azure Portal and navigate to the new sql server resource. Click **Firewalls and Virtual Networks** under **Security** on the left. Set **Allow access to Azure services** to **Yes** and click **Save** at the top of the blade to allow other Azure services to connect to the server.
 
 	![Allowing Azure to access the database server](Images/configure-database-server.png)
 
-4. Open the database in the Azure Portal. Then click **Query editor** in the menu on the left. At the login, enter **demouser** for the user name and **Demo@pass123** for the password and click **OK** to log in to the database.
+4. Open the **PolarBearDB** sql database resource in the Azure Portal. Click **Query editor** in the menu on the left. At the login page, enter **demouser** for the user name and **Demo@pass123** for the password and click **OK** to log in to the database.
 
 	![Logging in to the database server](Images/database-login.png)
 
@@ -175,17 +201,17 @@ In this task, you will use the Azure CLI to create an Azure SQL Database that re
 	GO
 	```
 
-6. Expand the list of tables in the treeview on the left and confirm that the "PolarBears" table was created, and that it has the following schema:
+6. Expand the list of tables on the left and confirm that the **PolarBears** table was created, and that it has the schema shown in the below screenshot:
 
 	![The database's "PolarBears" table](Images/polar-bears-table.png)
 
-	Note the column named "IsPolarBear," which will be set to 1 or 0 to indicate that the corresponding image does or does not contain a polar bear.  
+	>**Note:** the column named "IsPolarBear," which will be set to 1 or 0 to indicate that the corresponding image does or does not contain a polar bear.  
 
-## Task 4: Modify the Azure Function ##
+## Task 4: Modify the Azure Function
 
 In this task, you will modify the Azure Function that you created in the previous exercise to call the Custom Vision Service and determine the likelihood that an image *might* contain a polar bear *does* contain a polar bear, and to write the output to the Azure SQL database that you created in the previous task.
 
-1. Open the Azure Function App that you created in the previous exercise in the Azure Portal. Click the **Platform features** tab, and then click **Console**.
+1. Open the Azure Function App that you created in the previous exercise in the Azure Portal. Click **Console** under **Development Tools** on the left.
 
 	![Opening a function console](Images/open-function-console.png)
 
@@ -207,7 +233,7 @@ In this task, you will modify the Azure Function that you created in the previou
 
 	> Azure Functions written in JavaScript execute in a Node.js environment. The function console gives you access to that environment and lets you install NPM packages the same as you would in a local environment.
 
-3. Open your Azure Function (**HTTPTrigger1**) and replace the function code with the following code:
+3. Click **Functions** under **Functions** on the left then open your Azure Function (**HTTPTrigger1**). Click **Code + Test** under **Developer** on the left and replace the function code with the following code:
 
 	```javascript
 	module.exports = function (context, req) {
@@ -339,7 +365,7 @@ In this task, you will modify the Azure Function that you created in the previou
 
 	The code that you just added uses the Azure Storage SDK for Node.js ([azure-storage](https://www.npmjs.com/package/azure-storage)) to generate a read-only SAS for the blob that is passed to the Custom Vision Service, and appends it to the blob URL as a query string. The SAS is valid for 3 minutes and allows read access only. This allows your code to submit private blobs to the Custom Vision Service for analysis without putting the blobs in a public container where anyone could download them.
 
-4. Replace the following placeholders in the function code with the values below. Then **save** your changes.
+4. Replace the following placeholders in the function code with the values listed below. Then **Save** your changes.
 
 	- **PREDICTION_URL** on line 2 with the prediction URL you saved in Task 2
 
@@ -351,17 +377,21 @@ In this task, you will modify the Azure Function that you created in the previou
   
 	- **SERVER_NAME** on line 6 with the name you assigned to the database server in Task 3
 
-5. Use the Azure Portal to start the Stream Analytics job.
+5. Navigate to the **Stream Analytics job** resource and click **Start** then click **Start** again on the dialog that appears on the right.
 
-6. Once the Stream Analytics job is running, open a Command Prompt, navigate to the project directory, and start the camera array running with the following command:
+6. Once the Stream Analytics job is running, open a Command Prompt if you don't have one still running, and navigate to **C:\\SkillMeUp** with the first of the below commands. Start running the camera array by running the second of the below commands. 
+
+	```
+	cd c:\SkillMeUp
+	```
 
 	```
 	node run.js
 	```
 
-7. **Let the camera array and the Stream Analytics job run for 5 or more minutes**. Then stop the Stream Analytics job and stop **run.js**.
+7. **Let the camera array and the Stream Analytics job run for 5 or more minutes**. Then stop the Stream Analytics job and stop **run.js** (**CTRL + c**).
 
-8. Return to the database in the Azure Portal and use the query editor to execute the following query:
+8. Return to the database in the Azure Portal and open the query editor on the left. Enter **Demo@pass123** for the password if necessary. Run the following query:
 
 	```sql
 	SELECT * FROM dbo.PolarBears
@@ -373,7 +403,7 @@ In this task, you will modify the Azure Function that you created in the previou
 
 In the next exercise, you will use Power BI to produce a more compelling — and graphical — visualization of the data.
 
-## Summary ##
+## Summary
 
 In this exercise, you used the Custom Vision Service to train an image-classification model that can differentiate between different types of Arctic wildlife. Then you modified the Azure Function you wrote in the previous exercise to call the model and write the results to an Azure SQL Database. In the next exercise you will build a live dashboard that shows where polar bears are being spotted in the wild.
 

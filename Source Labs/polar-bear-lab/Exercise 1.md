@@ -13,19 +13,14 @@ In this lab, you will build such a system using [Microsoft Azure](https://azure.
 In this lab you will learn to:
 
 - Configure real-time stream ingestion using Azure IoT Hub
+
 - Analyze real-time streaming data using Azure Stream Analytics
+
 - Predict results using Azure Functions and Cognitive Services
+
 - Visualize output in real-time using Azure SQL Database and Power BI
 
-## Accessing and ending the Lab Environment
-
-SkillMeUp Real Time Labs use a virtual machine for all lab exercises. This allows you access to all of the tools and software needed to complete the lab without requiring you to install anything on your local computer. 
-
-The virtual machine may take several minutes to fully provision due to software installation and supporting files to copy.
-
-After you have completed all of the lab exercises ensure you click the End Lab button to get access to your certification of completion.
-
-## Accessing Microsoft Azure
+### Accessing Microsoft Azure
 
 Launch **Chrome** from the virtual machine desktop and navigate to the URL below. Your Azure Credentials are available by clicking the Cloud Icon at the top of the Lab Player.
 
@@ -37,28 +32,26 @@ https://portal.azure.com
 
 Copyright 2018 Microsoft Corporation. All rights reserved. Except where otherwise noted, these materials are licensed under the terms of the MIT License. You may use them according to the license as is most appropriate for your project. The terms of this license can be found at https://opensource.org/licenses/MIT.
 
-### Task 1: Verify Node Installation
+## Exercise 1: Install Node
 
-1. Verify your node install by running the following two commands from a command prompt. If they both return version numbers then you may skip the rest of this exercise and continue straight to the next exercise.
+In this exercise, you will install Node. 
+
+### Time Estimate
+
+- 10 minutes
+
+### Task 1: Install Node
+
+1. Open Chrome and navigate to the following url. 
 
     ```
-    node -v
+    nodejs.org
     ```
-
-    ```
-    npm -v
-    ```
-
-### Task 2: Install Node
-
-1. In a browser, navigate to **nodejs.org**
 
 2. Click the **Recommended For Most Users** option. 
 
     ![](images/2019-10-18-11-04-54.png)
 
-3. Step through the setup wizard. 
+3. Click the .msi file that appears in the download prompt at the bottom of the browser window then step through the setup wizard. You can accept all the default settings. At the end of the setup, click **Finish**. 
 
     ![](images/nodesetup.png)
-
-4. Once Node finishes installing, **LABVM**

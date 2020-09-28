@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LAB GUIDE – includes</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://opsgilitylabs.blob.core.windows.net/lablayout/labstyles.css"></link>
+</head>
+<body>
+<h2 id="exercise-2-create-an-azure-web-app-bot">Exercise 2: Create an Azure Web App Bot</h2>
+<p>The next step in creating a bot is to provide a location for the bot to be hosted in Azure. Azure Web Apps are perfect for hosting bot applications, and the Azure Bot Service is designed to provision them for you. In this exercise, you will use the Azure portal to provision an Azure Web App Bot from QnA Maker.</p>
+<ol type="1">
+<li><p>From within the QnA Maker Portal Publish page click <strong>Create Bot</strong>.</p>
+<p><img src="Images/19-11-06-botcreation.png" /></p></li>
+<li><p>In the blade that opens, enter the following configuration then click <strong>Create</strong>.</p>
+<ul>
+<li><p>Bot handle: <strong>Enter a unique name or accept the default value</strong>.</p></li>
+<li><p>Resource group: <strong>factbot-rg</strong></p></li>
+<li><p>Location: <strong>The region closest to you</strong></p></li>
+<li><p>Pricing tier: <strong>F0</strong></p></li>
+<li><p>SDK language: <strong>Node.js</strong></p></li>
+<li><p>Application insights: <strong>Off</strong></p></li>
+</ul>
+<p><img src="Images/19-11-06-botcreate.png" />.</p></li>
+<li><p>Click <strong>Resource groups</strong> in the portal’s left navigation. Then click <strong>factbot-rg</strong> to open the resource group created for the Azure Web App Bot. Wait until “Deploying” changes to “Succeeded” at the top of the blade indicating that the Azure Web App Bot was successfully deployed. Deployment generally requires two minutes or less. Periodically click <strong>Refresh</strong> at the top of the blade to refresh the deployment status, as it will not update automatically.</p>
+<p><img src="Images/19-11-06-botcreationresourcegroup.png" /></p></li>
+<li><p>Click on the Web App Bot in the Azure portal and click <strong>Test in Web Chat</strong> under <strong>Bot management</strong> on the left to open the test console. Enter <strong>What’s the most popular software programming language in the world?</strong> into the box at the bottom of the chat window and press <strong>Enter</strong>. Confirm that the bot responds as shown in the below screenshot.</p>
+<p><img src="Images/portal-testing-chat.png" /></p></li>
+</ol>
+<p>Behind the scenes, a lot happened when the Azure Web App Bot was deployed. A bot was created and registered, an Azure Web App was created to host it, and the bot was configured to work with Microsoft QnA Maker. The next step is to get the code and run it locally.</p>
+</body>
+</html>
