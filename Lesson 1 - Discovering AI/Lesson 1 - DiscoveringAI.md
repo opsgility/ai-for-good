@@ -192,3 +192,13 @@ As QnA Maker is a hosted application, you can choose the tier that is appropriat
 [Getting Started](https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/overview/overview)  
 
 [MS Learn QnA Maker](https://docs.microsoft.com/en-us/learn/modules/build-faq-chatbot-qna-maker-azure-bot-service/)  
+
+# Challenge #  
+
+Now that you have researched and evaluated the tools at Azure for working with AI and Bots, it is time to put one into action.  
+
+To complete this lesson, you will be working through a challenge to create an Azure Web Bot that leverages QnA Maker to automatically respond to questions.  
+
+Good Luck!  
+
+<!-- ([Link to lab]()) -->

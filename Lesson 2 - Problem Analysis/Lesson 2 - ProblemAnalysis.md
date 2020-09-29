@@ -57,7 +57,7 @@ A data lake can also act as the data source for a data warehouse. With this appr
 
 Data lake stores are often used in event streaming or IoT scenarios, because they can persist large amounts of relational and nonrelational data without transformation or schema definition. They are built to handle high volumes of small writes at low latency, and are optimized for massive throughput.  
 
-### Challenges
+### Challenges  
 
 - Lack of a schema or descriptive metadata can make the data hard to consume or query.  
 - Lack of semantic consistency across the data can make it challenging to perform analysis on the data, unless users are highly skilled at data analytics.  
@@ -91,7 +91,7 @@ Transactional databases can support strong consistency for transactions using va
 
 The most common deployment architecture that uses transactional data is the data store tier in a 3-tier architecture. A 3-tier architecture typically consists of a presentation tier, business logic tier, and data store tier. A related deployment architecture is the N-tier architecture, which may have multiple middle-tiers handling business logic.  
 
-### *Typical traits of transactional data*
+### *Typical traits of transactional data*  
 
 Transactional data tends to have the following traits:  
 
@@ -456,3 +456,17 @@ Review [This Guide](https://docs.microsoft.com/en-us/azure/architecture/data-gui
 -   [MS Learn Azure Functions](https://docs.microsoft.com/en-us/learn/modules/develop-test-deploy-azure-functions-with-core-tools/)  
 
 -   [MS Learn Azure App Webjobs](https://docs.microsoft.com/en-us/learn/modules/run-web-app-background-task-with-webjobs/)  
+
+# Challenge #  
+
+## Ingest streaming data  
+
+Now that you have researched and evaluated the tools at Azure for working with Storage and IoT Hubs, it is time to put things together with a practical challenge.  
+
+To complete this lesson, you will be working through a challenge to create a storage account that houses images taken by an array of cameras connected to an IoT Hub.  You will use the IoT hub with authentication, and you will be ingesting the streaming data as images arrive from the various cameras positioned in strategic locations to track the polar bear population.  
+
+![](images/road-map-1.png)  
+
+Good Luck!  
+
+<!-- ([Link to lab]()) -->
