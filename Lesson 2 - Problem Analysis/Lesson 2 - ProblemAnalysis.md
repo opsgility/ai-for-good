@@ -49,7 +49,7 @@ Advantages of a data lake:
 
 A complete data lake solution consists of both storage and processing. Data lake storage is designed for fault-tolerance, infinite scalability, and high-throughput ingestion of data with varying shapes and sizes. Data lake processing involves one or more processing engines built with these goals in mind, and can operate on data stored in a data lake at scale.  
 
-## When to use a data lake  
+### When to use a data lake  
 
 Typical uses for a data lake include data exploration, data analytics, and machine learning.  
 
@@ -57,7 +57,7 @@ A data lake can also act as the data source for a data warehouse. With this appr
 
 Data lake stores are often used in event streaming or IoT scenarios, because they can persist large amounts of relational and nonrelational data without transformation or schema definition. They are built to handle high volumes of small writes at low latency, and are optimized for massive throughput.  
 
-## Challenges
+### Challenges
 
 - Lack of a schema or descriptive metadata can make the data hard to consume or query.  
 - Lack of semantic consistency across the data can make it challenging to perform analysis on the data, unless users are highly skilled at data analytics.  
@@ -67,7 +67,7 @@ Data lake stores are often used in event streaming or IoT scenarios, because the
 - By itself, a data lake does not provide integrated or holistic views across the organization.  
 - A data lake may become a dumping ground for data that is never actually analyzed or mined for insights.  
 
-## Relevant Azure services  
+### Relevant Azure services  
 
 - [Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/) is a hyperscale, Hadoop-compatible repository.  
 
@@ -85,7 +85,7 @@ Transactional databases can support strong consistency for transactions using va
 
 The most common deployment architecture that uses transactional data is the data store tier in a 3-tier architecture. A 3-tier architecture typically consists of a presentation tier, business logic tier, and data store tier. A related deployment architecture is the N-tier architecture, which may have multiple middle-tiers handling business logic.  
 
-#### *Typical traits of transactional data*
+### *Typical traits of transactional data*
 
 Transactional data tends to have the following traits:  
 
@@ -107,13 +107,13 @@ Transactional data tends to have the following traits:
 | Query flexibility | Highly flexible |
 | Scale | Small (MBs) to Large (a few TBs) |
 
-#### *When to use this solution*  
+### *When to use this solution*  
 
 Choose OLTP when you need to efficiently process and store business transactions and immediately make them available to client applications in a consistent way. Use this architecture when any tangible delay in processing would have a negative impact on the day-to-day operations of the business.  
 
 OLTP systems are designed to efficiently process and store transactions, as well as query transactional data. The goal of efficiently processing and storing individual transactions by an OLTP system is partly accomplished by data normalization &mdash; that is, breaking the data up into smaller chunks that are less redundant. This supports efficiency because it enables the OLTP system to process large numbers of transactions independently, and avoids extra processing needed to maintain data integrity in the presence of redundant data.  
 
-#### *Challenges*  
+### *Challenges*  
 
 Implementing and using an OLTP system can create a few challenges:  
 
@@ -121,7 +121,7 @@ Implementing and using an OLTP system can create a few challenges:
 - When conducting analytics and reporting on data that is highly normalized, the queries tend to be complex, because most queries need to de-normalize the data by using joins. Also, naming conventions for database objects in OLTP systems tend to be terse and succinct. The increased normalization coupled with terse naming conventions makes OLTP systems difficult for business users to query, without the help of a DBA or data developer.  
 - Storing the history of transactions indefinitely and storing too much data in any one table can lead to slow query performance, depending on the number of transactions stored. The common solution is to maintain a relevant window of time (such as the current fiscal year) in the OLTP system and offload historical data to other systems, such as a data mart or [data warehouse](https://docs.microsoft.com/en-us/azure/architecture/data-guide/relational-data/data-warehousing).  
 
-#### *OLTP in Azure*  
+### *OLTP in Azure*  
 
 Applications such as websites hosted in [App Service Web Apps](https://docs.microsoft.com/azure/app-service/app-service-web-overview), REST APIs running in App Service, or mobile or desktop applications communicate with the OLTP system, typically via a REST API intermediary.  
 
@@ -134,7 +134,7 @@ In Azure, all of the following data stores will meet the core requirements for O
 - [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/)  
 - [Azure Database for PostgreSQL](https://docs.microsoft.com/azure/postgresql/)  
 
-#### *Key selection criteria*
+### *Key selection criteria*
 
 To narrow the choices, start by answering these questions:  
 
@@ -152,7 +152,7 @@ To narrow the choices, start by answering these questions:
 
 - Does your database have specific security needs? If yes, examine the options that provide capabilities like row level security, data masking, and transparent data encryption.  
 
-# Non-Relational & NoSQL Data Stores
+## Non-Relational & NoSQL Data Stores
 
 NoSQL data stores are designed to store any data that is not structured. NoSQL data can be either unstructured data such as binary data like images, videos or Word documents or semi-structured such as JSON. The difference between these two is that semi-structured data is self-describing, meaning that the schema is part of the file format.  
 
@@ -172,18 +172,17 @@ A document data store manages a set of named string fields and object data value
 
 Typically, a document contains the entire data for an entity. What items constitute an entity are application-specific. For example, an entity could contain the details of a customer, an order, or a combination of both. A single document might contain information that would be spread across several relational tables in a relational database management system (RDBMS). A document store does not require that all documents have the same structure. This free-form approach provides a great deal of flexibility. For example, applications can store different data in documents in response to a change in business requirements.  
 
-[Example document data store](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-overview#document-databases)  
-
 The application can retrieve documents by using the document key. This is a unique identifier for the document, which is often hashed, to help distribute data evenly. Some document databases create the document key automatically. Others enable you to specify an attribute of the document to use as the key. The application can also query documents based on the value of one or more fields. Some document databases support indexing to facilitate fast lookup of documents based on one or more indexed fields.  
 
 Many document databases support in-place updates, enabling an application to modify the values of specific fields in a document without rewriting the entire document. Read and write operations over multiple fields in a single document are typically atomic.  
 
-Relevant Azure services:  
+[Document Databases](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-overview#document-databases)  
+
+### Relevant Azure services:  
 
 - [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)  
 
 - [Azure Cosmos MongoDB](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)  
-
 
 ## Columnar data stores  
 
@@ -193,15 +192,15 @@ You can think of a column-family data store as holding tabular data with rows an
 
 The following link shows an example with two column families, `Identity` and `Contact Info`. The data for a single entity has the same row key in each column family. This structure, where the rows for any given object in a column family can vary dynamically, is an important benefit of the column-family approach, making this form of data store highly suited for storing data with varying schemas.  
 
-[Example of column-family data](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)  
-
 Unlike a key/value store or a document database, most column-family databases physically store data in key order, rather than by computing a hash. The row key is considered the primary index and enables key-based access via a specific key or a range of keys. Some implementations allow you to create secondary indexes over specific columns in a column family. Secondary indexes let you retrieve data by columns value, rather than row key.  
 
 On disk, all of the columns within a column family are stored together in the same file, with a certain number of rows in each file. With large data sets, this approach creates a performance benefit by reducing the amount of data that needs to be read from disk when only a few columns are queried together at a time.  
 
 Read and write operations for a row are typically atomic within a single column family, although some implementations provide atomicity across the entire row, spanning multiple column families.  
 
-Relevant Azure services:  
+[Column-family databases](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-overview#column-family-databases)  
+
+### Relevant Azure services:  
 
 - [Cosmos DB Cassandra API](https://docs.microsoft.com/azure/cosmos-db/cassandra-introduction)  
 
@@ -213,9 +212,7 @@ A key/value store is essentially a large hash table. You associate each data val
 
 Most key/value stores only support simple query, insert, and delete operations. To modify a value (either partially or completely), an application must overwrite the existing data for the entire value. In most implementations, reading or writing a single value is an atomic operation. If the value is large, writing may take some time.  
 
-An application can store arbitrary data as a set of values, although some key/value stores impose limits on the maximum size of values. The stored values are opaque to the storage system software. Any schema information must be provided and interpreted by the application. Essentially, values are blobs and the key/value store simply retrieves or stores the value by key.  
-
-[Example of data in a key/value store](https://docs.microsoft.com/en-us/azure/hdinsight/hbase/apache-hbase-overview)  
+An application can store arbitrary data as a set of values, although some key/value stores impose limits on the maximum size of values. The stored values are opaque to the storage system software. Any schema information must be provided and interpreted by the application. Essentially, values are blobs and the key/value store simply retrieves or stores the value by key.   
 
 Key/value stores are highly optimized for applications performing simple lookups using the value of the key, or by a range of keys, but are less suitable for systems that need to query data across different tables of keys/values, such as joining data across multiple tables.
 
@@ -223,7 +220,9 @@ Key/value stores are also not optimized for scenarios where querying or filterin
 
 A single key/value store can be extremely scalable, as the data store can easily distribute data across multiple nodes on separate machines.
 
-Relevant Azure services:  
+[Key/Value Data](https://docs.microsoft.com/en-us/azure/hdinsight/hbase/apache-hbase-overview)  
+
+### Relevant Azure services:  
 
 - [Azure Cosmos DB Table API](https://docs.microsoft.com/azure/cosmos-db/table-introduction)  
 - [Azure Cache for Redis](https://azure.microsoft.com/services/cache/)  
@@ -235,11 +234,11 @@ A graph data store manages two types of information, nodes and edges. Nodes repr
 
 The purpose of a graph data store is to allow an application to efficiently perform queries that traverse the network of nodes and edges, and to analyze the relationships between entities. The following diagram shows an organization's personnel data structured as a graph. The entities are employees and departments, and the edges indicate reporting relationships and the department in which employees work. In this graph, the arrows on the edges show the direction of the relationships.  
 
-![Example of data in a graph data store](../../guide/technology-choices/images/graph.png)  
-
 This structure makes it straightforward to perform queries such as "Find all employees who report directly or indirectly to Sarah" or "Who works in the same department as John?" For large graphs with lots of entities and relationships, you can perform complex analyses quickly. Many graph databases provide a query language that you can use to traverse a network of relationships efficiently.  
 
-Relevant Azure service:  
+[Graph data store](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-overview#graph-databases)  
+
+### Relevant Azure service:  
 
 - [Azure Cosmos DB Graph API](https://docs.microsoft.com/azure/cosmos-db/graph-introduction)  
 
@@ -247,11 +246,11 @@ Relevant Azure service:
 
 Time series data is a set of values organized by time, and a time series data store is optimized for this type of data. Time series data stores must support a very high number of writes, as they typically collect large amounts of data in real time from a large number of sources. Time series data stores are optimized for storing telemetry data. Scenarios include IoT sensors or application/system counters. Updates are rare, and deletes are often done as bulk operations.  
 
-[Time series data](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-overview#time-series-databases)  
-
 Although the records written to a time series database are generally small, there are often a large number of records, and total data size can grow rapidly. Time series data stores also handle out-of-order and late-arriving data, automatic indexing of data points, and optimizations for queries described in terms of windows of time. This last feature enables queries to run across millions of data points and multiple data streams quickly, in order to support time series visualizations, which is a common way that time series data is consumed.  
 
-Relevant Azure services:  
+[Time series data](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-overview#time-series-databases)  
+
+### Relevant Azure services:  
 
 - [Azure Time Series Insights](https://azure.microsoft.com/services/time-series-insights/)  
 
@@ -261,13 +260,13 @@ Relevant Azure services:
 
 Object data stores are optimized for storing and retrieving large binary objects or blobs such as images, text files, video and audio streams, large application data objects and documents, and virtual machine disk images. An object consists of the stored data, some metadata, and a unique ID for accessing the object. Object stores are designed to support files that are individually very large, as well provide large amounts of total storage to manage all files.  
 
-[Object Data Storage](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-overview#time-series-databases)  
-
 Some object data stores replicate a given blob across multiple server nodes, which enables fast parallel reads. This in turn enables the scale-out querying of data contained in large files, because multiple processes, typically running on different servers, can each query the large data file simultaneously.
 
 One special case of object data stores is the network file share. Using file shares enables files to be accessed across a network using standard networking protocols like server message block (SMB). Given appropriate security and concurrent access control mechanisms, sharing data in this way can enable distributed services to provide highly scalable data access for basic, low-level operations such as simple read and write requests.
 
-Relevant Azure services:
+[Object Data Storage](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-overview#time-series-databases)  
+
+### Relevant Azure services:  
 
 - [Azure Blob Storage](https://azure.microsoft.com/services/storage/blobs/)  
 - [Azure Data Lake Store](https://azure.microsoft.com/services/data-lake-store/)  
@@ -280,13 +279,13 @@ External index data stores provide the ability to search for information held in
 
 For example, you might have text files stored in a file system. Finding a file by its file path is quick, but searching based on the contents of the file would require a scan of all of the files, which is slow. An external index lets you create secondary search indexes and then quickly find the path to the files that match your criteria. Another example application of an external index is with key/value stores that only index by the key. You can build a secondary index based on the values in the data, and quickly look up the key that uniquely identifies each matched item.  
 
-[Search Engine Data](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-overview#time-series-databases)
-
 The indexes are created by running an indexing process. This can be performed using a pull model, triggered by the data store, or using a push model, initiated by application code. Indexes can be multidimensional and may support free-text searches across large volumes of text data.
 
 External index data stores are often used to support full text and web-based search. In these cases, searching can be exact or fuzzy. A fuzzy search finds documents that match a set of terms and calculates how closely they match. Some external indexes also support linguistic analysis that can return matches based on synonyms, genre expansions (for example, matching "dogs" to "pets"), and stemming (for example, searching for "run" also matches "ran" and "running").
 
-Relevant Azure service:  
+[Search Engine Data](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-overview#time-series-databases)
+
+### Relevant Azure service:  
 
 - [Azure Search](https://azure.microsoft.com/services/search/)  
 
@@ -373,7 +372,7 @@ AZTK is not an Azure service. Rather, it's a client-side tool with a CLI and Pyt
 - Mixed mode clusters that use both low-priority and dedicated VMs.  
 - Built in support for Azure Blob Storage and Azure Data Lake connection.  
 
-## Key selection criteria  
+### Key selection criteria  
 
 To narrow the choices, start by answering these questions:  
 
