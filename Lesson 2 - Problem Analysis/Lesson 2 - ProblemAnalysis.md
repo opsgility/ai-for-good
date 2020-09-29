@@ -172,7 +172,7 @@ A document data store manages a set of named string fields and object data value
 
 Typically, a document contains the entire data for an entity. What items constitute an entity are application-specific. For example, an entity could contain the details of a customer, an order, or a combination of both. A single document might contain information that would be spread across several relational tables in a relational database management system (RDBMS). A document store does not require that all documents have the same structure. This free-form approach provides a great deal of flexibility. For example, applications can store different data in documents in response to a change in business requirements.  
 
-![Example document data store](./images/document.png)  
+[Example document data store](https://docs.microsoft.com/en-us/azure/architecture/guide/technology-choices/data-store-overview#document-databases)  
 
 The application can retrieve documents by using the document key. This is a unique identifier for the document, which is often hashed, to help distribute data evenly. Some document databases create the document key automatically. Others enable you to specify an attribute of the document to use as the key. The application can also query documents based on the value of one or more fields. Some document databases support indexing to facilitate fast lookup of documents based on one or more indexed fields.  
 
