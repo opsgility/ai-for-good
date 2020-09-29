@@ -294,35 +294,31 @@ Relevant Azure service:
 
 Non-relational data stores often use a different storage architecture from that used by relational databases. Specifically, they tend toward having no fixed schema. Also, they tend not to support transactions, or else restrict the scope of transactions, and they generally don't include secondary indexes for scalability reasons.  
 
-# Data Ingestion ###  
+## Data Ingestion  
 
-Data ingestion is nothing more than the process used to get the data into the Azure Data Explorer, where it can then be queried.  
+Data ingestion is the process used to get the data into the Azure Data Explorer, where it can then be queried.  There are two main types of data ingestion, batch and streaming.
 
-## Batch Ingestion 
+### Batch Ingestion  
 
-Storage Explorer
+Batch ingestion optimizes throughput for high-volume and performant ingestion.  This can also provide performance improvements in query results.  
 
-AzCopy
+The default batching values are set to 5 minutes, 1000 items, or 500MB.  
 
-PowerShell and Azure CLI
+### Streaming Ingestion  
 
-Data Factory
+Streaming ingestion is real-time, ongoing data ingestion from various sources such as Event Hub and IoT Hub.  Generally useful for smaller sets of data, the data is placed in a row store and eventually moved to column store extents.  Using a tool like Stream Analytics, you can quickly query your live stream data for the results you need.
 
-## Streaming Ingestion 
+[Batching vs. Streaming ingestion](https://docs.microsoft.com/en-us/azure/data-explorer/ingest-data-overview#batching-vs-streaming-ingestion)    
 
-Event Hub
+## Batch Processing  
 
-IoT Hub
+Big data solutions often use long-running batch jobs to filter, aggregate, and otherwise prepare the data for analysis. Usually these jobs involve reading source files from scalable storage (like HDFS, Azure Data Lake Store, and Azure Storage), processing them, and writing the output to new files in scalable storage.  
 
-# Data Processing ###
-
-## Batch Processing 
-
-Big data solutions often use long-running batch jobs to filter, aggregate, and otherwise prepare the data for analysis. Usually these jobs involve reading source files from scalable storage (like HDFS, Azure Data Lake Store, and Azure Storage), processing them, and writing the output to new files in scalable storage.
-
-The key requirement of such batch processing engines is the ability to scale out computations, in order to handle a large volume of data. Unlike real-time processing, however, batch processing is expected to have latencies (the time between data ingestion and computing a result) that measure in minutes to hours.
+The key requirement of such batch processing engines is the ability to scale out computations, in order to handle a large volume of data. Unlike real-time processing, however, batch processing is expected to have latencies (the time between data ingestion and computing a result) that measure in minutes to hours.  
 
 ## Technology choices for batch processing  
+
+Big data solutions need to be able to scale out computations over long-running jobs.  There are a number of tools available in Azure to assist with Batch Processing.  
 
 ### Azure Synapse Analytics  
 
@@ -389,8 +385,26 @@ To narrow the choices, start by answering these questions:
 
 - Do you need to query relational data stores along with your batch processing, for example to look up reference data? If yes, consider the options that enable querying of external relational stores.  
 
-## Real-time Processing  
+## Stream Processing  
 
-Stream Analytics
+Azure provides a number of options when it comes to messaging solutions.  Within the messaging ecosystem, there are tools available to query, filter, and aggregate information from messages.  
 
-Databricks
+The key requirement of such streaming processing engines is the ability to process multiple perpetual streams of data as efficiently as possible.  
+
+## Technology choices for stream processing  
+
+In order to work with queues and messages, a number of tools and products are available in Azure for working with large data streams.  
+
+-   [Azure Stream Analytics](https://azure.microsoft.com/en-us/services/stream-analytics)  
+
+-   [Azure Databricks](https://azure.microsoft.com/en-us/services/databricks/)  
+
+-   [Apache Hadoop, Spark, and Kafka](https://azure.microsoft.com/en-us/free/hdinsight)  
+
+-   [Apache Storm in Azure](https://docs.microsoft.com/en-us/azure/hdinsight/storm/apache-storm-quickstart)  
+
+-   [Azure Functions](https://azure.microsoft.com/en-us/services/functions/)  
+
+-   [Azure WebJobs](https://docs.microsoft.com/en-us/azure/app-service/webjobs-dotnet-deploy-vs)  
+
+Review [This Guide](https://docs.microsoft.com/en-us/azure/architecture/data-guide/technology-choices/stream-processing) for more information on technology choices for stream processing.  
