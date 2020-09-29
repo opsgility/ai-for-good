@@ -57,10 +57,11 @@ context such as a city, a plate of bread, or a train station. Tags
 denote the notable aspects of the image, the most prominent or
 identifiable images that help determine what the image is “about”.  
 
-[Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/home)  
-[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/tutorials/pythontutorial)  
+[Learn More](https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/)  
 
-### Face Detection  
+[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/tutorials/storage-lab-tutorial)  
+
+### Facial Recognition  
 
 The Face API imbues your apps with the ability to identify a person
 using an image of their face. The API compares two images containing
@@ -68,20 +69,9 @@ faces and reports on how well they match up. This is accomplished using
 proportions of the head, hair color, and facial landmarks such as eyes,
 eyebrows, nose, and lips.  
 
-[Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview)  
-[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/face/tutorials/faceapiinjavaforandroidtutorial)  
+[Learn More](https://azure.microsoft.com/en-us/services/cognitive-services/face/)  
 
-### Emotion Detection  
-
-The detection of human emotion based upon facial expression allows
-systems to understand how people may be feeling. The Emotion API is
-invoked using a simple URL call which uploads your image containing one
-or more faces. Cognitive Services processes the image and returns
-emotion indices for each face such as anger, contempt, fear, happiness,
-and surprise.  
-
-[Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/emotion/home)  
-[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/emotion/tutorials/pythontutorial)  
+[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/face/tutorials/faceapiincsharptutorial)  
 
 ### Speech Recognition  
 
@@ -90,8 +80,9 @@ exposing acoustic models and language models for customization.
 Identifying and verifying a particular speaker is a next step in speech
 cognition and is provided by the Speaker Recognition API.  
 
-[Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-home)  
-[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-get-started)  
+[Learn More](https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/)  
+
+[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/)  
 
 ### Language  
 
@@ -103,8 +94,9 @@ map human utterances in natural language to entities and intents to know
 what object or person someone is talking about, how they feel about it,
 and what they would like to see happen with it.  
 
-[Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/home)  
-[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-nodejs-tutorial-build-bot-framework-sample)  
+[Learn More](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/)  
+
+[Get Started]([Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/home)  
 
 ### Knowledge  
 
@@ -116,18 +108,17 @@ your query engine as a service online. Employ natural language
 understanding to evaluate queries, offer intelligent recommendations,
 query auto-completion, and semantic search.  
 
-[Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/kes/overview)  
-[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/kes/gettingstarted)
+[Learn More](https://www.microsoft.com/en-us/research/project/knowledge-exploration/)  
+
+[Get Started](https://docs.microsoft.com/en-us/academic-services/knowledge-exploration-service/introduction)  
 
 ### Search  
 
-Although not strictly a cognitive function, the search of web pages,
-images, news, and video is often a necessary part of cognitive projects.
-The Bing Web Search API provides a search engine which consumes search
-query terms and produces JSON search responses.
+Azure search allows you to use the same tools that Bing and Office have used to perform search operations and extract information across large amounts of data.
 
-[Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-web-search/search-the-web)  
-[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-web-search/csharp-ranking-tutorial)
+[Learn More](https://azure.microsoft.com/en-us/services/search/)  
+
+[Get Started](https://docs.microsoft.com/en-us/azure/search/search-get-started-portal)
 
 ## Building Bots  
 
@@ -145,9 +136,6 @@ Node.js, and REST. Bot Builder conversations can use simple text or rich
 cards that contain text, images, and action buttons. Manage and deploy
 your bot with the Bot Framework portal. The portal provides a central
 repository for your bots and a way to deploy your bots to a web page.  
-
-[Learn More](https://docs.microsoft.com/en-us/bot-framework/azure/azure-bot-service-overview)  
-[Get Started](https://docs.microsoft.com/en-us/bot-framework/bot-builder-overview-getstarted)  
 
 ### Azure Bot Service  
 
@@ -167,10 +155,11 @@ such as Teams, Skype, or Web Chat, as well as Bing, Cortana, Facebook Messenger,
 
 Azure Bot Service is an implementation of the Bot Framework using Azure
 Functions, which allows your bot to run in serverless, scalable
-containers.
+containers.  
 
-[Learn More](https://docs.microsoft.com/en-us/bot-framework/azure/azure-bot-service-overview)  
-[Get Started](https://docs.microsoft.com/en-us/bot-framework/azure/azure-bot-service-template-basic)  
+[Learn More](https://azure.microsoft.com/en-us/services/bot-service/)  
+
+[Get Started](https://docs.microsoft.com/en-us/azure/bot-service/abs-quickstart?view=azure-bot-service-4.0)  
 
 ### QnA-Maker  
 
