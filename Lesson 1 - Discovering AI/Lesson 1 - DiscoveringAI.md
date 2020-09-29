@@ -61,6 +61,8 @@ identifiable images that help determine what the image is “about”.
 
 [Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/tutorials/storage-lab-tutorial)  
 
+[MS Learn Explore Computer Vision](https://docs.microsoft.com/en-us/learn/paths/explore-computer-vision-microsoft-azure/)  
+
 ### Facial Recognition  
 
 The Face API imbues your apps with the ability to identify a person
@@ -73,6 +75,8 @@ eyebrows, nose, and lips.
 
 [Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/face/tutorials/faceapiincsharptutorial)  
 
+[MS Learn Face Service](https://docs.microsoft.com/en-us/learn/modules/detect-analyze-faces/)  
+
 ### Speech Recognition  
 
 The Custom Speech API provides a powerful speech recognition system
@@ -83,6 +87,8 @@ cognition and is provided by the Speaker Recognition API.
 [Learn More](https://azure.microsoft.com/en-us/services/cognitive-services/speech-services/)  
 
 [Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/)  
+
+[MS Learn Speech Services](https://docs.microsoft.com/en-us/learn/paths/process-translate-speech-azure-cognitive-speech-services/)  
 
 ### Language  
 
@@ -97,6 +103,8 @@ and what they would like to see happen with it.
 [Learn More](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/)  
 
 [Get Started]([Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/home)  
+
+[MS Learn Language Services](https://docs.microsoft.com/en-us/learn/paths/evaluate-text-with-language-services/)  
 
 ### Knowledge  
 
@@ -118,7 +126,9 @@ Azure search allows you to use the same tools that Bing and Office have used to 
 
 [Learn More](https://azure.microsoft.com/en-us/services/search/)  
 
-[Get Started](https://docs.microsoft.com/en-us/azure/search/search-get-started-portal)
+[Get Started](https://docs.microsoft.com/en-us/azure/search/search-get-started-portal)  
+
+[MS Learn Azure Search](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-search/)  
 
 ## Building Bots  
 
@@ -161,6 +171,8 @@ containers.
 
 [Get Started](https://docs.microsoft.com/en-us/azure/bot-service/abs-quickstart?view=azure-bot-service-4.0)  
 
+[MS Learn Bot Service](https://docs.microsoft.com/en-us/learn/paths/create-bots-with-the-azure-bot-service/)  
+
 ### QnA-Maker  
 
 QnA Maker gives you the ability to move your documentation and knowledge-base to the cloud, thereby allowing you to create a fully functional question and answer service.
@@ -172,3 +184,9 @@ When connected to your chatbot, you can deploy a fully-functional customer servi
 As your users continue to query the system, the system will leverage machine learning to get better at responding to the questions as they come in.  
 
 As QnA Maker is a hosted application, you can choose the tier that is appropriate to your needs.  QnA maker also supports over 50 languages, so you can choose the language that makes the resonates best with your users.  
+
+[Learn More](https://azure.microsoft.com/en-us/services/cognitive-services/qna-maker/)  
+
+[Getting Started](https://docs.microsoft.com/en-us/azure/cognitive-services/qnamaker/overview/overview)  
+
+[MS Learn QnA Maker](https://docs.microsoft.com/en-us/learn/modules/build-faq-chatbot-qna-maker-azure-bot-service/)  
