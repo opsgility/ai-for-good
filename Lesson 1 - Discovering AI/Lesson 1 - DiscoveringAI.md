@@ -1,10 +1,10 @@
-# Discover the Possibilities of AI
+# Discover the Possibilities of AI  
 
-## What is Artificial Intelligence?
+## What is Artificial Intelligence?  
 
-Artificial Intelligence is a branch of computer science that focuses on creating applications that mimic the cognitive functions that we associate with the human mind such as learning or problem solving. The goal of an AI application is to analyze its environment and to take actions that maximize the chances of success. AI does this through the use of mathematics, computational intelligence, statistics and probability. Artificial Intelligence has use cases in almost every business or field of study and is commonly used to solve problems such as search,reasoning, knowledge representation, learning, natural language processing, computer vision, and robotics. 
+Artificial Intelligence is a branch of computer science that focuses on creating applications that mimic the cognitive functions that we associate with the human mind such as learning or problem solving. The goal of an AI application is to analyze its environment and to take actions that maximize the chances of success. AI does this through the use of mathematics, computational intelligence, statistics and probability. Artificial Intelligence has use cases in almost every business or field of study and is commonly used to solve problems such as search,reasoning, knowledge representation, learning, natural language processing, computer vision, and robotics.  
 
-# Azure Cognitive Services and Bots
+# Azure Cognitive Services and Bots  
 
 Cloud Computing and Big Data are merging into a trend that utilizes both
 remote computing and large-scale computation: Cognitive Computing.
@@ -13,14 +13,14 @@ Massive data sets of the world around us are compiled every second
 sift through that data to reach meaningful conclusions. Microsoft
 Cognitive Services implement cognitive computing and employ machine
 learning to provide actionable insights using vision, speech, language,
-knowledge, and search APIs.
+knowledge, and search APIs.  
 
 Bots interact with your users naturally wherever they are – from your
 website or app to Cortana, Skype, Office 365 mail, Slack, Facebook
 Messenger, Skype for Business and more. Cognitive Services enable your
 bot to see, hear, interpret and interact in more human ways. Azure Bot
 Service provides a foundation for building custom bots to allow humans
-to interact with machines in productive ways.
+to interact with machines in productive ways.  
 
 - [Cognitive Services](#cognitive-services)  
    - [Image Processing](#image-processing)  
@@ -30,21 +30,22 @@ to interact with machines in productive ways.
    - [Language](#language)  
    - [Knowledge](#knowledge)  
    - [Search](#search)  
+   - [QnAMaker](#QnA-Maker)
 - [Building Bots](#building-bots)  
    - [Bot Framework](#bot-framework)  
-   - [Azure Bot Service](#azure-bot-service)
+   - [Azure Bot Service](#azure-bot-service)  
 
 
-## Cognitive Services
+## Cognitive Services  
 
 Effective cognitive computing requires easy-to-use service endpoints
 consumable by apps with images, audio, and other media and data that
 needs to be processed by sophisticated cognitive systems that return
 straightforward and usable results. Let your students get their hands on
 cognitive algorithms quickly using Microsoft’s Cognitive Services APIs.
-There are many entry points into the exploration of cognitive computing.
+There are many entry points into the exploration of cognitive computing.  
 
-### Image Processing
+### Image Processing  
 
 The Computer Vision API identifies people and objects with a reported
 level of confidence. Individuals are identified, what they look like,
@@ -54,45 +55,45 @@ buildings, houses, natural features such as rivers or mountains, or
 household objects such as dinner rolls or flowers, then placed in a
 context such as a city, a plate of bread, or a train station. Tags
 denote the notable aspects of the image, the most prominent or
-identifiable images that help determine what the image is “about”.
+identifiable images that help determine what the image is “about”.  
 
 [Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/home)  
-[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/tutorials/pythontutorial)
+[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/computer-vision/tutorials/pythontutorial)  
 
-### Face Detection
+### Face Detection  
 
 The Face API imbues your apps with the ability to identify a person
 using an image of their face. The API compares two images containing
 faces and reports on how well they match up. This is accomplished using
 proportions of the head, hair color, and facial landmarks such as eyes,
-eyebrows, nose, and lips.
+eyebrows, nose, and lips.  
 
 [Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview)  
-[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/face/tutorials/faceapiinjavaforandroidtutorial)
+[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/face/tutorials/faceapiinjavaforandroidtutorial)  
 
-### Emotion Detection
+### Emotion Detection  
 
 The detection of human emotion based upon facial expression allows
 systems to understand how people may be feeling. The Emotion API is
 invoked using a simple URL call which uploads your image containing one
 or more faces. Cognitive Services processes the image and returns
 emotion indices for each face such as anger, contempt, fear, happiness,
-and surprise.
+and surprise.  
 
 [Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/emotion/home)  
-[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/emotion/tutorials/pythontutorial)
+[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/emotion/tutorials/pythontutorial)  
 
-### Speech Recognition
+### Speech Recognition  
 
 The Custom Speech API provides a powerful speech recognition system
 exposing acoustic models and language models for customization.
 Identifying and verifying a particular speaker is a next step in speech
-cognition and is provided by the Speaker Recognition API.
+cognition and is provided by the Speaker Recognition API.  
 
 [Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-home)  
-[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-get-started)
+[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/custom-speech-service/cognitive-services-custom-speech-get-started)  
 
-### Language
+### Language  
 
 While speech recognition determines what a person is saying, language
 understanding extracts deeper meaning such as topic, sentiment, and
@@ -100,12 +101,12 @@ desire. Build custom language models to interpret what a person wants
 using the Language Understanding Intelligent Service (LUIS). Learn to
 map human utterances in natural language to entities and intents to know
 what object or person someone is talking about, how they feel about it,
-and what they would like to see happen with it.
+and what they would like to see happen with it.  
 
 [Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/home)  
-[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-nodejs-tutorial-build-bot-framework-sample)
+[Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/luis-nodejs-tutorial-build-bot-framework-sample)  
 
-### Knowledge
+### Knowledge  
 
 Explore the ability to search complex data using natural language
 queries using the Knowledge Exploration Server (KES). Define your own
@@ -113,12 +114,12 @@ data schema and populate it with your data. Construct query grammars
 used to parse language requests and extract and filter data, then host
 your query engine as a service online. Employ natural language
 understanding to evaluate queries, offer intelligent recommendations,
-query auto-completion, and semantic search.
+query auto-completion, and semantic search.  
 
 [Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/kes/overview)  
 [Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/kes/gettingstarted)
 
-### Search
+### Search  
 
 Although not strictly a cognitive function, the search of web pages,
 images, news, and video is often a necessary part of cognitive projects.
@@ -128,14 +129,14 @@ query terms and produces JSON search responses.
 [Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-web-search/search-the-web)  
 [Get Started](https://docs.microsoft.com/en-us/azure/cognitive-services/bing-web-search/csharp-ranking-tutorial)
 
-## Building Bots
+## Building Bots  
 
 A bot is an app that users interact with in a conversational way. Bot
 conversations can range from a basic guided dialog with pre-defined
 responses to a sophisticated interactive experience that leverages
 cognitive computing to determine user desires and sentiments.
 
-### Bot Framework
+### Bot Framework  
 
 Building a bot requires a development toolkit and a testing environment.
 Get started with the Bot Framework, a platform for building, testing,
@@ -143,12 +144,12 @@ and deploying bots. It includes a Bot Builder SDK with support for .NET,
 Node.js, and REST. Bot Builder conversations can use simple text or rich
 cards that contain text, images, and action buttons. Manage and deploy
 your bot with the Bot Framework portal. The portal provides a central
-repository for your bots and a way to deploy your bots to a web page.
+repository for your bots and a way to deploy your bots to a web page.  
 
-[Learn More](https://docs.microsoft.com/en-us/bot-framework/azure/azure-bot-service-overview)   
-[Get Started](https://docs.microsoft.com/en-us/bot-framework/bot-builder-overview-getstarted)
+[Learn More](https://docs.microsoft.com/en-us/bot-framework/azure/azure-bot-service-overview)  
+[Get Started](https://docs.microsoft.com/en-us/bot-framework/bot-builder-overview-getstarted)  
 
-### Azure Bot Service
+### Azure Bot Service  
 
 Build bots quickly using Azure Bot Service, an online tool for bot
 development built upon the Bot Framework. Choose from a range of
@@ -156,14 +157,13 @@ templates including a basic interaction, highly structed forms
 facilitating particular conversations such as the ordering of a
 sandwich, natural language understanding to determine user intent,
 proactive alerts to notify users of events, to an FAQ template to answer
-users’ most common questions.
+users’ most common questions.  
 
 Build bots in your browser without the need for a text editor or source
 control, or choose the continuous integration option and use your own
 source code control such as GitHub, BitBucket, or Visual Studio. After
 developing and testing your bot, deploy it to pre-configured channels
-such as Skype or Web Chat, as well as Bing, Cortana, Facebook Messenger,
-Kik, and Slack.
+such as Teams, Skype, or Web Chat, as well as Bing, Cortana, Facebook Messenger, Kik, and Slack.  
 
 Azure Bot Service is an implementation of the Bot Framework using Azure
 Functions, which allows your bot to run in serverless, scalable
@@ -171,3 +171,15 @@ containers.
 
 [Learn More](https://docs.microsoft.com/en-us/bot-framework/azure/azure-bot-service-overview)  
 [Get Started](https://docs.microsoft.com/en-us/bot-framework/azure/azure-bot-service-template-basic)  
+
+### QnA-Maker  
+
+QnA Maker gives you the ability to move your documentation and knowledge-base to the cloud, thereby allowing you to create a fully functional question and answer service.
+
+You create the questions and the answers, and you train the solution to recognize typical questions from your users.  You provide the answers, and the service does the rest of the work for you.  
+
+When connected to your chatbot, you can deploy a fully-functional customer service solution as a first line response to both quickly respond and help your customers and limit the number of calls that your customer service representatives would have to take directly.  
+
+As your users continue to query the system, the system will leverage machine learning to get better at responding to the questions as they come in.  
+
+As QnA Maker is a hosted application, you can choose the tier that is appropriate to your needs.  QnA maker also supports over 50 languages, so you can choose the language that makes the resonates best with your users.  

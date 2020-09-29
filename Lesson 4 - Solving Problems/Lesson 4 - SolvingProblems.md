@@ -1,6 +1,6 @@
 # Solving Problems 
 
-Test implementation of the Wildlfe services API and write a final paper about how (someone) could use AI or imagine a new AI to provide insights into a problem or help treat or solve a problem.
+Test implementation of the Wildlife services API and write a final paper about how (someone) could use AI or imagine a new AI to provide insights into a problem or help treat or solve a problem.
 
 ## Exercise 5: Visualizing Data with Power BI ##
 
