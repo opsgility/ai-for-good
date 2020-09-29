@@ -69,9 +69,15 @@ Data lake stores are often used in event streaming or IoT scenarios, because the
 
 ### Relevant Azure services  
 
-- [Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/) is a hyperscale, Hadoop-compatible repository.  
+-   [Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/) is a hyperscale, Hadoop-compatible repository.  
 
-- [Azure Databricks](https://azure.microsoft.com/en-us/services/databricks/)  
+-   [Azure Databricks](https://azure.microsoft.com/en-us/services/databricks/)  
+
+-   [MS Learn Storage](https://docs.microsoft.com/en-us/learn/paths/store-data-in-azure/)  
+
+-   [MS Learn Data Lake](https://docs.microsoft.com/en-us/learn/modules/introduction-to-azure-data-lake-storage/)  
+
+-   [MS Learn Databricks](https://docs.microsoft.com/en-us/learn/paths/data-engineer-azure-databricks/)  
 
 ## Relational Databases  
 
@@ -129,10 +135,17 @@ In practice, most workloads are not purely OLTP. There tends to be an analytical
 
 In Azure, all of the following data stores will meet the core requirements for OLTP and the management of transaction data:  
 
-- [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/)  
-- [SQL Server in an Azure virtual machine](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview?toc=/azure/virtual-machines/windows/toc.json)  
-- [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/)  
-- [Azure Database for PostgreSQL](https://docs.microsoft.com/azure/postgresql/)  
+-   [Azure SQL Database](https://docs.microsoft.com/azure/sql-database/)  
+
+-   [SQL Server in an Azure virtual machine](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview?toc=/azure/virtual-machines/windows/toc.json)  
+
+-   [Azure Database for MySQL](https://docs.microsoft.com/azure/mysql/)  
+
+-   [Azure Database for PostgreSQL](https://docs.microsoft.com/azure/postgresql/)  
+
+-   [MS Learn Azure SQL](https://docs.microsoft.com/en-us/learn/paths/azure-sql-fundamentals/)  
+
+-   [MS Learn MySql, MariaDB, and PostgreSQL](https://docs.microsoft.com/en-us/learn/modules/deploy-mariadb-mysql-postgresql-azure/)  
 
 ### *Key selection criteria*
 
@@ -180,9 +193,11 @@ Many document databases support in-place updates, enabling an application to mod
 
 ### Relevant Azure services:  
 
-- [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)  
+-   [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)  
 
-- [Azure Cosmos MongoDB](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)  
+-   [Azure Cosmos MongoDB](https://docs.microsoft.com/en-us/azure/cosmos-db/mongodb-introduction)  
+
+-   [MS Learn Cosmos DB](https://docs.microsoft.com/en-us/learn/paths/work-with-nosql-data-in-azure-cosmos-db/)  
 
 ## Columnar data stores  
 
@@ -202,9 +217,11 @@ Read and write operations for a row are typically atomic within a single column 
 
 ### Relevant Azure services:  
 
-- [Cosmos DB Cassandra API](https://docs.microsoft.com/azure/cosmos-db/cassandra-introduction)  
+-   [Cosmos DB Cassandra API](https://docs.microsoft.com/azure/cosmos-db/cassandra-introduction)  
 
-- [HBase in HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hbase-overview)  
+-   [HBase in HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hbase-overview)  
+
+-   [MS Learn HDInsight](https://docs.microsoft.com/en-us/learn/modules/creating-and-configuring-hdinsight-cluster/)  
 
 ## Key/value data stores
 
@@ -224,9 +241,15 @@ A single key/value store can be extremely scalable, as the data store can easily
 
 ### Relevant Azure services:  
 
-- [Azure Cosmos DB Table API](https://docs.microsoft.com/azure/cosmos-db/table-introduction)  
-- [Azure Cache for Redis](https://azure.microsoft.com/services/cache/)  
-- [Azure Table Storage](https://azure.microsoft.com/services/storage/tables/)  
+-   [Azure Cosmos DB Table API](https://docs.microsoft.com/azure/cosmos-db/table-introduction)  
+
+-   [Azure Cache for Redis](https://azure.microsoft.com/services/cache/)  
+
+-   [Azure Table Storage](https://azure.microsoft.com/services/storage/tables/)  
+
+-   [MS Learn Appropriate Cosmos API](https://docs.microsoft.com/en-us/learn/modules/choose-api-for-cosmos-db/)  
+
+-   [MS Learn Redis Cache](https://docs.microsoft.com/en-us/learn/modules/optimize-your-web-apps-with-redis/)  
 
 ## Graph data stores  
 
@@ -240,7 +263,11 @@ This structure makes it straightforward to perform queries such as "Find all emp
 
 ### Relevant Azure service:  
 
-- [Azure Cosmos DB Graph API](https://docs.microsoft.com/azure/cosmos-db/graph-introduction)  
+-   [Azure Cosmos DB Graph API](https://docs.microsoft.com/azure/cosmos-db/graph-introduction)  
+
+-   [MS Learn Appropriate Cosmos API](https://docs.microsoft.com/en-us/learn/modules/choose-api-for-cosmos-db/)  
+
+-   [MS Learn Graph data in Cosmos](https://docs.microsoft.com/en-us/learn/modules/store-access-data-cosmos-graph-api/)  
 
 ## Time series data stores  
 
@@ -252,9 +279,11 @@ Although the records written to a time series database are generally small, ther
 
 ### Relevant Azure services:  
 
-- [Azure Time Series Insights](https://azure.microsoft.com/services/time-series-insights/)  
+-   [Azure Time Series Insights](https://azure.microsoft.com/services/time-series-insights/)  
 
-- [OpenTSDB with HBase on HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hbase-overview)
+-   [OpenTSDB with HBase on HDInsight](https://docs.microsoft.com/azure/hdinsight/hdinsight-hbase-overview)  
+
+-   [MS Learn Time Series Insights](https://docs.microsoft.com/en-us/learn/modules/explore-analyze-time-series-insights/)  
 
 ## Object data stores  
 
@@ -268,10 +297,16 @@ One special case of object data stores is the network file share. Using file sha
 
 ### Relevant Azure services:  
 
-- [Azure Blob Storage](https://azure.microsoft.com/services/storage/blobs/)  
-- [Azure Data Lake Store](https://azure.microsoft.com/services/data-lake-store/)  
+-   [Azure Blob Storage](https://azure.microsoft.com/services/storage/blobs/)  
+-   [Azure Data Lake Store](https://azure.microsoft.com/services/data-lake-store/)  
 
-- [Azure File Storage](https://azure.microsoft.com/services/storage/files/)  
+-   [Azure File Storage](https://azure.microsoft.com/services/storage/files/)  
+
+-   [MS Learn Blob Storage](https://docs.microsoft.com/en-us/learn/modules/store-app-data-with-azure-blob-storage/)  
+
+-   [MS Learn Data Lake](https://docs.microsoft.com/en-us/learn/paths/data-processing-with-azure-adls/)  
+
+-   [MS Learn File Storage](https://docs.microsoft.com/en-us/learn/modules/store-and-share-with-azure-files/)  
 
 ## External index data stores
 
@@ -287,7 +322,9 @@ External index data stores are often used to support full text and web-based sea
 
 ### Relevant Azure service:  
 
-- [Azure Search](https://azure.microsoft.com/services/search/)  
+-   [Azure Search](https://azure.microsoft.com/services/search/)  
+
+-   [MS Learn Azure Search](https://docs.microsoft.com/en-us/learn/modules/create-azure-cognitive-search-solution/)  
 
 ## Typical requirements  
 
@@ -407,3 +444,15 @@ In order to work with queues and messages, a number of tools and products are av
 -   [Azure WebJobs](https://docs.microsoft.com/en-us/azure/app-service/webjobs-dotnet-deploy-vs)  
 
 Review [This Guide](https://docs.microsoft.com/en-us/azure/architecture/data-guide/technology-choices/stream-processing) for more information on technology choices for stream processing.  
+
+## Related Learning  
+
+-   [MS Learn Data Warehouse Analytics](https://docs.microsoft.com/en-us/learn/paths/azure-data-fundamentals-explore-data-warehouse-analytics/)  
+
+-   [MS Learn Apache Spark and Kafka in HDInsight](https://docs.microsoft.com/en-us/learn/modules/perform-advanced-streaming-data-transformations-with-spark-kafka/)  
+
+-   [MS Learn Describe Azure Databricks](https://docs.microsoft.com/en-us/learn/modules/describe-azure-databricks/)  
+
+-   [MS Learn Azure Functions](https://docs.microsoft.com/en-us/learn/modules/develop-test-deploy-azure-functions-with-core-tools/)  
+
+-   [MS Learn Azure App Webjobs](https://docs.microsoft.com/en-us/learn/modules/run-web-app-background-task-with-webjobs/)  
