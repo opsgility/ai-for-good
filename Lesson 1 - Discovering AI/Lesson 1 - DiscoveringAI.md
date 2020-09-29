@@ -102,7 +102,7 @@ and what they would like to see happen with it.
 
 [Learn More](https://azure.microsoft.com/en-us/services/cognitive-services/language-understanding-intelligent-service/)  
 
-[Get Started]([Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/home)  
+[Learn More](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/home)  
 
 [MS Learn Language Services](https://docs.microsoft.com/en-us/learn/paths/evaluate-text-with-language-services/)  
 
@@ -119,6 +119,8 @@ query auto-completion, and semantic search.
 [Learn More](https://www.microsoft.com/en-us/research/project/knowledge-exploration/)  
 
 [Get Started](https://docs.microsoft.com/en-us/academic-services/knowledge-exploration-service/introduction)  
+
+[MS Learn Knowledge mining](https://docs.microsoft.com/en-us/learn/paths/implement-knowledge-mining-azure-cognitive-search/)  
 
 ### Search  
 
