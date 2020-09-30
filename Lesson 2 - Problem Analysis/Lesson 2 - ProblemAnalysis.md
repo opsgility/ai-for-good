@@ -459,7 +459,7 @@ Review [This Guide](https://docs.microsoft.com/en-us/azure/architecture/data-gui
 
 # Challenge #  
 
-## Ingest streaming data  
+## Ingest streaming data 
 
 Now that you have researched and evaluated the tools at Azure for working with Storage and IoT Hubs, it is time to put things together with a practical challenge.  
 
