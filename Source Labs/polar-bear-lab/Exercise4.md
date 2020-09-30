@@ -6,7 +6,7 @@ The Custom Vision Service exposes two APIs: the [Custom Vision Training API](htt
 
 In this exercise, you will create a Custom Vision Service model and train it to differentiate between various types of Arctic wildlife. Then you will connect it to the Stream Analytics job you created in the previous lab.
 
-![](images/road-map-3.png)
+![](Images/road-map-3.png)
 
 ### Objectives ###
 
@@ -32,11 +32,11 @@ In this task, you will create a new Custom Vision Service project. Then you will
 	https://www.customvision.ai
 	```
 
-    ![](images/portal-sign-in.png)
+    ![](Images/portal-sign-in.png)
 
 2. Click **New Project** then in the the dialog that appears, enter **ProjectPolarBear** for the **Project name** and **Polar bear tracking** for the description. Click **create new** above the **Resource** dropdown.
 
-	![](images/2019-10-20-15-03-47.png)
+	![](Images/2019-10-20-15-03-47.png)
 
 3. On the **Create New Resource** dialog, enter the following information then click **Create resource**. 
 
@@ -52,7 +52,7 @@ In this task, you will create a new Custom Vision Service project. Then you will
 
 	- Pricing Tier: **F0**
 
-	![](images/2019-10-20-15-08-58.png)
+	![](Images/2019-10-20-15-08-58.png)
 
 	>**Note:** You may see an error that says **One of your Azure accounts seems to have issues**. If this occurs, click Create Project again. You will receive a second error but the resource will show in the Azure portal as well as the Resource drop down in the **Create new project** menu that appears. You may have to refresh the page to return to the **Create new project** menu and enter the Name and Description again. 
 
@@ -60,7 +60,7 @@ In this task, you will create a new Custom Vision Service project. Then you will
 
 	> A domain optimizes a model for specific types of images. For example, if your goal is to classify food images by the types of food they contain or the ethnicity of the dishes, then it might be helpful to select the Food domain. For scenarios that don't match any of the offered domains, or if you are unsure of which domain to choose, select the General domain.
 
-	![](images/2019-10-20-15-44-12.png)
+	![](Images/2019-10-20-15-44-12.png)
 
 5. Click **Add images** to add images to the project.
 
@@ -90,7 +90,7 @@ In this task, you will train the model using the images that you tagged and uplo
 
 2. Wait for the training process to complete. (It should only take a few minutes.) Then review the training statistics presented to you for iteration 1.
 
-	![](images/2019-10-20-15-53-25.png)
+	![](Images/2019-10-20-15-53-25.png)
 
 	**Precision** and **recall** are separate but related  measures of the model's accuracy. Suppose the model was presented with three polar-bear images and three walrus images, and that it correctly identified two of the polar-bear images as polar-bear images, but incorrectly identified two of the walrus images as polar-bear images. In this case, the precision would be 50% (two of the four images it classified as polar-bear images actually are polar-bear images), while its recall would be 67% (it correctly identified two of the three polar-bear images as polar-bear images). You can learn more about precision and recall from https://en.wikipedia.org/wiki/Precision_and_recall.
 
@@ -116,7 +116,7 @@ In this task, you will train the model using the images that you tagged and uplo
 
 9. Click **create new** above the Resource dropdown.
 
-	![](images/2019-10-20-17-19-19.png)
+	![](Images/2019-10-20-17-19-19.png)
 
 10. In the Create New Resource dialogue, enter the following information then click **Create resource**. 
 
@@ -132,15 +132,15 @@ In this task, you will train the model using the images that you tagged and uplo
 
 	- Pricing tier: **F0**
 
-	![](images/2019-10-20-17-20-50.png)
+	![](Images/2019-10-20-17-20-50.png)
 
 11. Close the Create new project dialogue by clicking **Cancel**. We are simply using the new project wizard to create a new resource for us, we do not need another project.
 
 12. Click the **ProjectPolarBear** project then click the **Publish** tab to deploy your model. Name your model **polarbeardetector** and choose the prediction resource you just created and click **Publish**.
 
-	![](images/2019-10-20-17-11-13.png)
+	![](Images/2019-10-20-17-11-13.png)
 
-	![](images/2019-10-20-17-12-33.png)
+	![](Images/2019-10-20-17-12-33.png)
 
 13. Click the **Prediction URL** button at the top of your project page. The ensuing dialog lists two URLs: one for uploading images via URL, and another for uploading images as byte streams. Copy the first Prediction URL then paste it to Notepad so you can retrieve it later. Do the same for the ```Prediction-Key``` value underneath the URL. This value must be passed in each call to the prediction URL. 
 

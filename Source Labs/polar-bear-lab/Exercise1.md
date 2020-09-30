@@ -50,8 +50,8 @@ In this exercise, you will install Node.
 
 2. Click the **Recommended For Most Users** option. 
 
-    ![](images/2019-10-18-11-04-54.png)
+    ![](Images/2019-10-18-11-04-54.png)
 
 3. Click the .msi file that appears in the download prompt at the bottom of the browser window then step through the setup wizard. You can accept all the default settings. At the end of the setup, click **Finish**. 
 
-    ![](images/nodesetup.png)
+    ![](Images/nodesetup.png)
