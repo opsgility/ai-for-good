@@ -2,7 +2,7 @@
 
 In this exercise, you will create a storage account and an IoT hub and write a [Node.js](https://nodejs.org/) app that connects them to a simulated camera array. Then you will test one of the virtual cameras by having it upload a photograph to blob storage and transmit an event containing the blob URL and other information to the IoT hub.
 
-![](images/road-map-1.png)
+![](Images/road-map-1.png)
 
 ### Objectives
 
@@ -211,11 +211,11 @@ Devices that transmit events to an Azure IoT hub must first be registered with t
 	node deploy.js
 	```
 
-	![](images/DeployJSOutput.png)
+	![](Images/DeployJSOutput.png)
 
 7. Verify that a file named **cameras.json** was created in **C:\\SkillMeUp**. Open the file and view its contents in Visual Studio Code. Confirm that the ```key``` properties which are empty strings in **devices.json** have values in **cameras.json**.
 
-	![](images/CameraKeyValues.png)
+	![](Images/CameraKeyValues.png)
 
 ## Task 4: Test the simulated camera array
 
@@ -223,7 +223,7 @@ In this task, you will write code to test the camera array that you deployed in 
 
 1. Create a new folder named **photos** in **C:\\SkillMeUp**. Then copy all 30 JPG files from **C:\\SkillMeUp\\CameraSimImages** to the **photos** directory. These are the images that the simulated cameras will upload to blob storage, samples of which are shown below. Wildlife depicted in the images include Arctic foxes, polar bears, and walruses.
 
-	![](images/wildlife-images.png)
+	![](Images/wildlife-images.png)
 
 2. In the Command Prompt with C:\\SkillMeUp as the current directory, execute the following command to install the [Microsoft Azure Storage SDK for Node.js](https://www.npmjs.com/package/azure-storage):
 
@@ -317,41 +317,41 @@ In this task, you will write code to test the camera array that you deployed in 
 
 	Confirm that you see the following output indicating that the command completed successfully:
 
-	![](images/TestUploadOutput.png)
+	![](Images/TestUploadOutput.png)
 
 8. Open a browser tab then navigate and log into the Azure Portal (https://portal.azure.com) with the credentials in the cloud icon if you haven't already. 
 
 9. Expand the portal's left navigation by clicking **Show portal menu** in the top left then click **Resource groups**. Click the **streaminglab-rg** resource group to view its contents.
 
-	![](images/open-resource-group.png)
+	![](Images/open-resource-group.png)
 
 10. Click the storage account that you created in Task 1.
 
-	![](images/open-storage-account.png)
+	![](Images/open-storage-account.png)
 
 11. In the blade for the storage account, click **Containers** to view a list of blob containers.
 
-    ![](images/open-blob-storage.png)
+    ![](Images/open-blob-storage.png)
 
 12. Click **photos** to open the "photos" container.
 
-	![](images/open-container.png)
+	![](Images/open-container.png)
 
 13. Click the blob named **image_19.jpg**.
 
-	![](images/open-blob.png)
+	![](Images/open-blob.png)
 
 14. Click **Download** to download the blob. Open it at the download prompt and confirm that it contains a small (64x64) grayscale polar-bear image.
 
-	![](images/download-blob.png)
+	![](Images/download-blob.png)
 
 15. Return to the **streaminglab-rg** resource group in the portal and click the IoT hub.
 
-	![](images/open-iot-hub.png)
+	![](Images/open-iot-hub.png)
 
 16. Scroll down and confirm that at least one message has been received by the IoT hub, and that it has 10 devices registered. These are the simulated cameras that you registered in the previous exercise. 
 
-	![](images/2018-10-19-17-29-40.png)
+	![](Images/2018-10-19-17-29-40.png)
 
 If you would like to see a list of devices registered with the IoT hub, click **IoT Devices** in the menu on the left. If you then click one of the devices, you will find that individual devices can be enabled and disabled through the portal. Devices can also be enabled and disabled using the Azure CLI.
 

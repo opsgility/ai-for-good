@@ -6,7 +6,7 @@ The goal of business intelligence is being able to quickly identify and respond 
 
 In this exercise, you will connect Microsoft Power BI to the Azure SQL database you created in the previous exercise to capture information emanating from the virtual camera array you deployed in the Arctic. Then you will use Power BI to build a report that shows in near real-time where polar bears are being spotted.
 
-![](images/road-map-4.png)
+![](Images/road-map-4.png)
 
 ### Objectives
 
@@ -30,11 +30,11 @@ In the previous exercise, you used the [Custom Vision Service](https://azure.mic
 
 2. On the Power BI Desktop dialogue, click **Get data**.
 
-	![](images/2019-10-20-20-08-13.png)
+	![](Images/2019-10-20-20-08-13.png)
 
 3. On the **Get Data** dialogue, select **Azure** then **Azure SQL database** and click **Connect**.
 
-	![](images/2019-10-20-20-12-09.png)
+	![](Images/2019-10-20-20-12-09.png)
 
 4. Enter the server's host name (the server name you have noted with ".database.windows.net" added to the end since it's an Azure SQL database server that can be found in the Portal) and **PolarBearDB** for the database name. Select **DirectQuery** for the connectivity mode. Expand the **Advanced Options** section, then enter the below query into the **SQL Statement** box to select the 20 most recently added rows in the "PolarBears" table. This is the query that the report will use to pull information from the database. When you're done, click **OK**.
 
@@ -42,11 +42,11 @@ In the previous exercise, you used the [Custom Vision Service](https://azure.mic
 	SELECT TOP 20 Id, CameraId, Latitude, Longitude, Url, Timestamp, FORMAT(Timestamp,'MM/dd/yyyy h:mm:ss tt') AS TimestampLabel, IsPolarBear FROM dbo.PolarBears ORDER BY Timestamp DESC
 	```
 
-    ![](images/2019-10-20-20-19-40.png)
+    ![](Images/2019-10-20-20-19-40.png)
 
 5. On the SQL Server database dialog, select **Database** on the left. Enter **demouser** for the user name and **Demo@pass123** for the password. Then click **Connect**.
 
-    ![](images/2019-10-20-20-23-55.png)
+    ![](Images/2019-10-20-20-23-55.png)
 
 6. When prompted, click **Load** to load the data into Power BI.
 
@@ -58,49 +58,49 @@ Visualizations are the primary element that make up Power BI reports. In this ta
 
 1. On the Power BI Desktop canvas, click the **Map** icon in the **Visualizations** panel on the right to add a map visual to the report.
 	
-	![](images/2019-10-20-20-32-55.png)
+	![](Images/2019-10-20-20-32-55.png)
 
 2. Check the **Latitude** and **Longitude** boxes in the **Fields** panel on the right to include these fields in the visual.
 	
-	![](images/2019-10-20-20-33-48.png)
+	![](Images/2019-10-20-20-33-48.png)
 
 3. In the **Visualizations** panel, click the down arrow next to **Average of Latitude** and select **Don't summarize**. Then do the same for **Average of Longitude**.
 
-	![](images/2019-10-20-20-35-03.png)
+	![](Images/2019-10-20-20-35-03.png)
 
 4. In the **Fields** panel, check the **IsPolarBear** box to add that field to the map. Then resize the map so that it looks something like this:
 
-	![Resizing the map](images/map-visual.png)
+	![Resizing the map](Images/map-visual.png)
 
 	Note that the number and location of the "bubbles" in your map will probably be different than what's shown here.
 
 5. Click in the empty area outside the map to deselect it. Then check the **CameraId**, **IsPolarBear**, and **TimestampLabel** boxes in the **Fields** panel to add a table visual containing those columns to the report.
 
-	![Adding a table visual](images/table-visual-1.png)
+	![Adding a table visual](Images/table-visual-1.png)
 
 6. Deselect the table visual. Then check **IsPolarBear** and **Latitude** in the **Fields** panel to add another table visual, and click the **Pie Chart** icon in the **Visualizations** panel to convert the table into a pie chart. 
 
-	![](images/2019-10-20-20-38-21.png)
+	![](Images/2019-10-20-20-38-21.png)
 
 7. Click the down arrow next to **Average of Latitude** and select **Count** from the menu to configure the pie chart to show a count of sightings and the proportion of sightings in which polar bears were detected. 
 
-	![Refining the pie-chart visual](images/pie-chart-visual.png)
+	![Refining the pie-chart visual](Images/pie-chart-visual.png)
 
 8. Deselect the pie-chart visual and click the **Slicer** icon to add a slicer to the report. Slicers provide a convenient means for filtering information in a Power BI report by narrowing the data shown in other visuals.
 
-	![](images/2019-10-20-20-50-36.png)
+	![](Images/2019-10-20-20-50-36.png)
 
 9. Check the **IsPolarBear** box in the **Fields** panel so the slicer shows checkboxes labeled "True" and "False." 
 
-	![Refining the slicer](images/slicer-visual.png)
+	![Refining the slicer](Images/slicer-visual.png)
 
 10. Now resize and reposition the visuals to achieve a layout similar to this:
 
-	![Adjusting the layout](images/layout.png)
+	![Adjusting the layout](Images/layout.png)
 
 11. With the report structure in place, the next task is to use some of Power BI's rich formatting options to embellish the visuals. Start by selecting the map visual in the report designer. Then click the **Format** icon in the **Visualizations** panel.
 
-	![](images/2019-10-20-20-51-43.png)
+	![](Images/2019-10-20-20-51-43.png)
 
 12. Use the formatting controls in the **Visualizations** panel to make the following changes to the map visual:
 
@@ -116,7 +116,7 @@ Visualizations are the primary element that make up Power BI reports. In this ta
 
 	Confirm that the resulting map looks something like this:
 
-	![Formatted map visual](images/formatted-map-visual.png)
+	![Formatted map visual](Images/formatted-map-visual.png)
 
 13. Select the pie-chart visual and use the formatting controls in the **Visualizations** panel to make the following changes:
 
@@ -128,7 +128,7 @@ Visualizations are the primary element that make up Power BI reports. In this ta
 
 	Confirm that the resulting pie-chart visual resembles this:
 
-	![Formatted pie-chart visual](images/formatted-pie-chart-visual.png)
+	![Formatted pie-chart visual](Images/formatted-pie-chart-visual.png)
 
 14. Select the table visual and use the formatting controls in the **Visualizations** panel to make the following changes:
 
@@ -138,7 +138,7 @@ Visualizations are the primary element that make up Power BI reports. In this ta
 
 	Confirm that the resulting table looks like this:
 
-	![Formatted table visual](images/formatted-table-visual.png)
+	![Formatted table visual](Images/formatted-table-visual.png)
 
 15. Select the slicer visual and use the formatting controls in the **Visualizations** panel to make the following changes:
 
@@ -154,7 +154,7 @@ Visualizations are the primary element that make up Power BI reports. In this ta
 
 The formatted report should resemble the one below. Feel free to embellish it further. You could, for example, add a title in a large font at the top of the report. Once you're satisfied with the layout and content, it's time to put it to work using a live data source.
 
-![The formatted report](images/formatted-report.png)
+![The formatted report](Images/formatted-report.png)
 
 ## Task 3: Run the end-to-end solution
 
@@ -176,11 +176,11 @@ Now that the report is prepared in Power BI, your final task is to run the end-t
 
 4. Return to the Power BI report click **Refresh** at the top of the page. Then refresh it again every 15 seconds or so. The report will refresh automatically every 15 minutes, but you can refresh it manually as often as you would like to update the visuals. 
 
-	![](images/2019-10-20-20-58-35.png)
+	![](Images/2019-10-20-20-58-35.png)
 
 5. Confirm that red and green bubbles appear at various locations around the island. Red bubbles indicate the presence of polar bears, while green bubbles represent locations where photos were taken but no polar bears were detected. Locations that have a mixture of sightings will show red *and* green, as pictured below.
 
-	![There be polar bears!](images/report-in-action.png)
+	![There be polar bears!](Images/report-in-action.png)
 	_There be polar bears!_
 
 6. Suppose you *only* wanted to show locations where polar bears were detected. Check the **True** box in the slicer visual. What happens in the map?
