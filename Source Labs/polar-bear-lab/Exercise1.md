@@ -20,17 +20,15 @@ In this lab you will learn to:
 
 - Visualize output in real-time using Azure SQL Database and Power BI
 
+
 ### Accessing Microsoft Azure
 
-Launch **Chrome** from the virtual machine desktop and navigate to the URL below. Your Azure Credentials are available by clicking the Cloud Icon at the top of the Lab Player.
+Launch a browser from your lab virtual machine and navigate to the URL below and login using the Azure credentials given to you by your instructor.
 
-```
+```html
 https://portal.azure.com
 ```
 
----
-
-Copyright 2018 Microsoft Corporation. All rights reserved. Except where otherwise noted, these materials are licensed under the terms of the MIT License. You may use them according to the license as is most appropriate for your project. The terms of this license can be found at https://opensource.org/licenses/MIT.
 
 ## Exercise 1: Install Node
 

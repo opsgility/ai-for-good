@@ -38,7 +38,7 @@ In this hands-on lab, you will learn how to:
 
 ## Accessing Microsoft Azure
 
-Launch a browser from the virtual machine desktop and navigate to the URL below. Your Azure Credentials are available by clicking the Cloud Icon at the top of the Lab Player.
+Launch a browser from your lab virtual machine and navigate to the URL below and login using the Azure credentials given to you by your instructor.
 
 ```html
 https://portal.azure.com
