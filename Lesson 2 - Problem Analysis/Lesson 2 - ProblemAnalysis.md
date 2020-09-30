@@ -467,6 +467,10 @@ To complete this lesson, you will be working through a challenge to create a sto
 
 ![](images/road-map-1.png)  
 
-Good Luck!  
+Good Luck, and Have Fun!  
 
-<!-- ([Link to lab]()) -->
+## Complete the following exercises ##  
+
+[Exercise 1: Overview](../Source%20Labs/polar-bear-lab/Exercise1.md)  
+
+[Exercise 2: Ingest Streaming Data with IoT Hub](../Source%20Labs/polar-bear-lab/Exercise2.md)  

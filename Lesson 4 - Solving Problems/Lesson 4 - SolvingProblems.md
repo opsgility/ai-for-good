@@ -103,6 +103,6 @@ In this exercise, you will learn how to:
 - Use Power BI to visualize data written to the database  
 - Create a report that can be shared with colleagues  
 
-Good Luck!  
+## Complete the following exercises ##  
 
-<!-- ([Link to lab]()) -->
+[Exercise 5: Visualizing Data with Power BI](../Source%20Labs/polar-bear-lab/Exercise5.md)  

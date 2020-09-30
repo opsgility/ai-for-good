@@ -199,6 +199,16 @@ Now that you have researched and evaluated the tools at Azure for working with A
 
 To complete this lesson, you will be working through a challenge to create an Azure Web Bot that leverages QnA Maker to automatically respond to questions.  
 
-Good Luck!  
+Good Luck, and Have Fun!  
 
-<!-- ([Link to lab]()) -->
+## Complete the following exercises ##  
+
+[Exercise 1: Overview](../Source%20Labs/ai-azure-bot-service/Exercise1.md)  
+
+[Exercise 2: Create an Azure Web App Bot](../Source%20Labs/ai-azure-bot-service/Exercise2.md)  
+
+[Exercise 3: Deploy a bot with Visual Studio Code](../Source%20Labs/ai-azure-bot-service/Exercise3.md)  
+
+[Exercise 4: Debug a bot locally](../Source%20Labs/ai-azure-bot-service/Exercise4.md)  
+
+[Exercise 5: Test the bot with Teams](../Source%20Labs/ai-azure-bot-service/Exercise5.md)  

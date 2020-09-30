@@ -198,6 +198,10 @@ In this exercise, you will learn how to:
 
 - Use an Azure Function as a Stream Analytics output  
 
-Good Luck!  
+Good Luck, and Have Fun!  
 
-<!-- ([Link to lab]()) -->
+## Complete the following exercises ##  
+
+[Exercise 3: Analyze Data with Stream Analytics](../Source%20Labs/polar-bear-lab/Exercise3.md)  
+
+[Exercise 4: Predicting Results with Cognitive Services](../Source%20Labs/polar-bear-lab/Exercise4.md)  
