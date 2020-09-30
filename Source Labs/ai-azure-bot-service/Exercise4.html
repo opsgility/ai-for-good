@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>LAB GUIDE – includes</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    span.underline{text-decoration: underline;}
+    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://opsgilitylabs.blob.core.windows.net/lablayout/labstyles.css"></link>
+</head>
+<body>
+<h2 id="exercise-4-debug-the-bot-locally">Exercise 4: Debug the bot locally</h2>
+<p>As with any application code that you write, changes to bot code need to be tested and debugged locally before being deployed to production. To help debug bots, Microsoft offers the Bot Framework Emulator. In this exercise, you will learn how to use Visual Studio Code and the emulator to debug your bots.</p>
+<ol type="1">
+<li><p>Install the Microsoft Bot Framework Emulator by first opening your Bot in the Azure portal. Click <strong>Build</strong> then click <strong>Get Emulator</strong>. In the resulting GitHub repository, look for the latest version of the <strong>windows-setup.exe</strong> file. Download and install it using the default settings. After the install is complete leave the app running.</p>
+<p><img src="Images/InstallBotFramework.png" /></p></li>
+<li><p>In order to run the programs, you need to restore the node packages.</p>
+<p>In Visual Studio Code, open a new terminal.</p>
+<p>If the terminal opens with Bash, use the dropdown to select the default shell.</p>
+<p><img src="Images/0401-select-default-terminal.png" /></p>
+<p>When the default window opens, select <code>Powershell</code>. Then open a new terminal.</p>
+<p><img src="Images/0402-selectpowershell.png" /></p>
+<p>With the powershell terminal open, run the command <code>npm install</code> to install all the missing node_modules.</p>
+<pre><code>npm install</code></pre>
+<p><img src="Images/0403-npminstall.png" /></p>
+<p>Once the node packages are installed, you can continue to the next step.</p></li>
+<li><p>Click <strong>Run</strong> &gt; <strong>Start debugging</strong> to start a debugging session. Click <strong>Node.js</strong> when prompted.</p>
+<p><img src="Images/0405-startdebugging.png" /></p>
+<p>Confirm that <strong>restify listening to http://[::]:3978</strong> appears in the debug console.</p>
+<p><img src="Images/0404-debugconsolerestify.png" /></p></li>
+<li><p>Navigate to your bot in the Azure Portal and click <strong>Configuration</strong> under <strong>App Service Settings</strong> on the left. On the <strong>MicrosoftAppId</strong> and <strong>MicrosoftAppPassword</strong> settings, click <strong>Edit</strong> on each setting and copy the respective values to Notepad for the next step.</p>
+<p><img src="Images/19-11-06-Configuration.png" /></p></li>
+<li><p>Navigate to the following url in a new browser tab. Download the Windows version from the website. Open the zip file and extract the contents to <strong>C:\SkillMeUp</strong>.</p>
+<pre><code>ngrok.com/download</code></pre></li>
+<li><p>Your bot code is now running locally in the node.js terminal.</p>
+<p>Return to the Bot Framework Emulator window. <strong>Do not</strong> click on <code>Open Bot</code>.</p>
+<p>Instead, Click the <strong>Settings</strong> icon on the bottom left. Click <strong>Browse</strong> next to <strong>Path to ngrok</strong> and in the dialog that appears. navigate to <strong>C:\SkillMeUp</strong> and select the ngrok executable file that was downloaded and extracted in the previous step. Click <strong>Save</strong> then click the <strong>Welcome</strong> tab at the top.</p>
+<p><img src="Images/ngrokPath.png" /></p></li>
+<li><p>Click <strong>Create a new bot configuration</strong>.</p>
+<p>In the <strong>New bot configuration</strong> dialog, enter the following configuration, then click <strong>Save and connect</strong> to save the configuration file to <strong>C:\SkillMeUp</strong>.</p>
+<ul>
+<li><p>Bot name: <strong>The name of the bot (If necessary, you can find it in the Azure portal)</strong></p></li>
+<li><p>Bot url: <strong>http://localhost:3978/api/messages</strong></p>
+<pre><code>http://localhost:3978/api/messages</code></pre></li>
+<li><p>MicrosoftAppId: <strong>The value you copied earlier</strong></p></li>
+<li><p>MicrosoftAppPassword: <strong>The value you copied earlier</strong></p></li>
+</ul>
+<blockquote>
+<p><strong>Note:</strong> In the future, you can reconnect to the bot simply by clicking the bot name under “My Bots.”</p>
+</blockquote></li>
+<li><p>Enter “hi” into the box at the bottom of the emulator and press <strong>Enter</strong>.</p>
+<pre><code>hi</code></pre>
+<p>Next, enter <strong>I am a c# developer.</strong></p>
+<pre><code>I am a C# developer.</code></pre>
+<p>Once the bot has responded, ask the bot <strong>Why are you not singing me a lullaby?</strong></p>
+<pre><code>Why are you not singing me a lullaby?</code></pre>
+<p><img src="Images/EmulatorMessages.png" /></p></li>
+<li><p>When you’re done, return to Visual Studio code and click <strong>Run</strong> &gt; <strong>Stop debugging</strong>.</p></li>
+</ol>
+<p>At this point, you have a fully functioning bot and know how to debug it by running it locally in the Microsoft Bot Emulator. The next step is to make the bot more intelligent by connecting it to the knowledge base you published in exercise 1.</p>
+<h2 id="progressing-to-the-next-exercise">Progressing to the next exercise</h2>
+<p>After you have completed the challenge, click <strong>Next</strong> to move to the next exercise.</p>
+</body>
+</html>
